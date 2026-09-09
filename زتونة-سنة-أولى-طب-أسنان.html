@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زتونة سنة أولى طب أسنان | FullMark</title>
+<style>
+:root{
+  --bg:#07171a;--bg-2:#0c2226;--panel:#0f2a2e;
+  --panel-2:rgba(255,255,255,0.035);--line:rgba(255,255,255,0.09);
+  --teal:#15b8a6;--teal-2:#5eead4;--emerald:#34d399;--amber:#e8b34c;
+  --ink:#eaf6f3;--ink-dim:#9bc2bd;--ink-faint:#5d8782;
+  --r1:18px;--r2:12px;--r3:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:"Tahoma","Segoe UI",-apple-system,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.7;}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 900px 600px at 15% -5%,rgba(21,184,166,0.16),transparent 60%),radial-gradient(ellipse 700px 500px at 95% 110%,rgba(52,211,153,0.10),transparent 60%),linear-gradient(180deg,#061417 0%,#07171a 50%,#081c20 100%);}
+.wrap{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 16px 60px;}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(7,23,26,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:900px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(145deg,var(--teal),var(--emerald));display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;box-shadow:0 4px 14px rgba(21,184,166,0.35);}
+.brand-text h1{font-family:Georgia,serif;font-weight:600;font-size:.98rem;color:var(--ink);}
+.brand-text p{font-size:.62rem;color:var(--ink-faint);letter-spacing:1px;margin-top:1px;}
+.home-btn{background:var(--panel-2);border:1px solid var(--line);color:var(--ink-dim);border-radius:10px;padding:8px 13px;font-size:.78rem;font-weight:600;cursor:pointer;font-family:inherit;}
+.home-btn:hover{color:var(--teal-2);border-color:rgba(21,184,166,.4);}
+
+/* Home / landing */
+.home-hero{padding:34px 0 20px;text-align:center;}
+.home-hero .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;letter-spacing:1px;color:var(--teal-2);background:rgba(21,184,166,0.1);border:1px solid rgba(21,184,166,0.25);padding:5px 13px;border-radius:20px;margin-bottom:14px;}
+.home-hero h2{font-family:Georgia,serif;font-size:1.65rem;font-weight:700;color:var(--ink);line-height:1.35;max-width:600px;margin:0 auto 10px;}
+.home-hero p{color:var(--ink-dim);font-size:.92rem;max-width:520px;margin:0 auto;}
+
+.section-cards{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.section-card{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r1);padding:20px;cursor:pointer;transition:all .2s;text-align:right;}
+.section-card:hover{border-color:rgba(21,184,166,.45);background:rgba(21,184,166,0.06);transform:translateY(-1px);}
+.section-card .sc-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;}
+.section-card h3{font-family:Georgia,serif;font-size:1.15rem;color:var(--teal-2);}
+.section-card .sc-count{font-size:.68rem;color:var(--ink-faint);background:rgba(255,255,255,0.05);padding:3px 10px;border-radius:20px;flex-shrink:0;}
+.section-card p{font-size:.85rem;color:var(--ink-dim);}
+.section-card .sc-topics{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.chip{font-size:.72rem;background:rgba(21,184,166,0.08);border:1px solid rgba(21,184,166,0.2);color:var(--ink-dim);padding:4px 10px;border-radius:7px;}
+
+/* Sub-nav within a subject */
+.subject-nav{display:flex;gap:6px;overflow-x:auto;margin:14px 0 4px;padding-bottom:4px;scrollbar-width:none;}
+.subject-nav::-webkit-scrollbar{display:none;}
+.snav-btn{flex-shrink:0;padding:8px 15px;border-radius:10px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink-faint);cursor:pointer;font-family:inherit;font-size:.78rem;font-weight:600;white-space:nowrap;transition:all .15s;}
+.snav-btn.active{background:rgba(21,184,166,0.14);border-color:rgba(21,184,166,0.4);color:var(--teal-2);}
+.snav-btn:not(.active):hover{color:var(--ink);}
+
+.topic-nav{display:flex;gap:6px;overflow-x:auto;margin:10px 0 16px;padding-bottom:4px;scrollbar-width:none;}
+.topic-nav::-webkit-scrollbar{display:none;}
+.tnav-btn{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:1px;padding:7px 12px 6px;border-radius:10px;border:1px solid transparent;background:transparent;color:var(--ink-faint);cursor:pointer;font-family:inherit;transition:all .2s;}
+.tnav-btn .t{font-size:.74rem;font-weight:600;white-space:nowrap;}
+.tnav-btn.active{background:rgba(21,184,166,0.14);border-color:rgba(21,184,166,0.4);color:var(--teal-2);}
+.tnav-btn:not(.active):hover{color:var(--ink);}
+
+.crumb{font-size:.72rem;color:var(--ink-faint);margin:14px 0 4px;display:flex;align-items:center;gap:6px;}
+.crumb b{color:var(--teal-2);font-weight:600;}
+
+.topic-hero{padding:14px 0 8px;}
+.topic-hero .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.65rem;letter-spacing:1px;color:var(--teal-2);background:rgba(21,184,166,0.1);border:1px solid rgba(21,184,166,0.25);padding:4px 10px;border-radius:20px;margin-bottom:10px;}
+.topic-hero h2{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.3;}
+.topic-hero .sub-en{color:var(--ink-faint);font-size:.78rem;margin-top:4px;}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.panel-anim{animation:fadeIn .3s ease;}
+
+/* Content blocks */
+.topic-block{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r1);padding:16px;margin-bottom:12px;border-right:3px solid var(--teal);}
+.topic-block h3{font-family:Georgia,serif;font-size:1.05rem;font-weight:600;color:var(--teal-2);margin-bottom:9px;}
+.topic-block h4{font-size:.85rem;font-weight:700;color:var(--amber);margin:12px 0 6px;}
+.topic-block ul{padding-right:18px;margin-bottom:4px;}
+.topic-block li{margin-bottom:6px;font-size:.9rem;color:var(--ink);}
+.topic-block li::marker{color:var(--teal-2);}
+.topic-block b,.topic-block strong{color:var(--teal-2);}
+.topic-block p{font-size:.9rem;margin-bottom:8px;color:var(--ink);}
+.topic-block .en{color:var(--ink-faint);font-size:.75rem;}
+
+.note-box{background:rgba(232,179,76,0.08);border:1px solid rgba(232,179,76,0.28);border-radius:var(--r3);padding:10px 13px;font-size:.85rem;margin-top:10px;color:#f3d9a3;}
+.note-box b{color:var(--amber);}
+.why-box{background:rgba(21,184,166,0.07);border:1px solid rgba(21,184,166,0.25);border-radius:var(--r3);padding:10px 13px;font-size:.85rem;margin-top:10px;color:var(--ink-dim);}
+.why-box b{color:var(--teal-2);}
+
+.chrono-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;}
+.chrono-card{background:rgba(21,184,166,0.07);border:1px solid rgba(21,184,166,0.2);border-radius:var(--r3);padding:8px 10px;}
+.chrono-card .v{font-weight:700;color:var(--teal-2);font-size:.85rem;}
+.chrono-card .l{font-size:.7rem;color:var(--ink-faint);margin-top:2px;}
+
+.kp-card{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r2);padding:12px 14px;margin-bottom:9px;display:flex;gap:10px;align-items:flex-start;}
+.kp-num{flex-shrink:0;width:23px;height:23px;border-radius:6px;background:rgba(21,184,166,0.15);color:var(--teal-2);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;margin-top:1px;}
+.kp-card p{font-size:.88rem;color:var(--ink);}
+.kp-card b{color:var(--amber);}
+
+.fc-wrap{display:flex;flex-direction:column;gap:12px;}
+.fc-card{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r1);padding:0;overflow:hidden;cursor:pointer;min-height:90px;}
+.fc-face{padding:16px 18px;display:flex;align-items:center;justify-content:center;text-align:center;min-height:90px;}
+.fc-q{font-size:.9rem;font-weight:600;color:var(--ink);}
+.fc-a{font-size:.86rem;color:var(--teal-2);display:none;}
+.fc-card.flipped .fc-q{display:none;}
+.fc-card.flipped .fc-a{display:block;}
+.fc-hint{text-align:center;font-size:.68rem;color:var(--ink-faint);padding-bottom:10px;}
+
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:4px 0;border-radius:var(--r2);border:1px solid var(--line);}
+.compare-table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:520px;}
+.compare-table th{background:rgba(21,184,166,0.12);color:var(--teal-2);padding:9px 11px;text-align:right;font-weight:700;font-size:.75rem;border-bottom:1px solid var(--line);white-space:nowrap;}
+.compare-table td{padding:9px 11px;border-bottom:1px solid var(--line);color:var(--ink-dim);vertical-align:top;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table td b{color:var(--ink);}
+.compare-table tr:hover td{background:rgba(255,255,255,0.02);}
+
+footer{text-align:center;padding:26px 16px 10px;color:var(--ink-faint);font-size:.72rem;}
+footer .quran{color:var(--teal-2);font-size:.8rem;margin-bottom:8px;}
+
+@media(min-width:640px){
+  .chrono-grid{grid-template-columns:repeat(4,1fr);}
+}
+
+/* ===== LOCK SCREEN & SUBSCRIPTION (FullMark access system) ===== */
+#lockScreen{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto;}
+.lock-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r1);padding:40px 36px;max-width:460px;width:100%;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4);}
+.lock-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--emerald));}
+.fm-name{font-family:Georgia,'Times New Roman',serif;font-size:26px;font-weight:700;color:var(--teal-2);}
+.fm-tagline{font-size:11px;color:var(--ink-faint);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+.lock-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal-2);border:1px solid rgba(21,184,166,0.3);padding:5px 16px;border-radius:20px;margin-bottom:16px;background:rgba(21,184,166,0.06);}
+.lock-title{font-family:Georgia,serif;font-size:clamp(19px,3.5vw,25px);font-weight:600;color:var(--ink);line-height:1.3;margin-bottom:8px;direction:rtl;}
+.pw-label{font-size:12px;color:var(--ink-faint);margin-bottom:8px;direction:rtl;text-align:right;}
+.pw-wrap{display:flex;gap:8px;}
+.pw-input{flex:1;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:inherit;font-size:15px;direction:ltr;text-align:center;letter-spacing:1px;outline:none;transition:border-color .2s;}
+.pw-input:focus{border-color:var(--teal);}
+.pw-input.error{animation:pwShake .4s;border-color:#f0645c;}
+@keyframes pwShake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+.pw-btn{background:linear-gradient(135deg,var(--teal),var(--emerald));color:#04201c;border:none;border-radius:10px;padding:0 20px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;}
+.pw-btn:disabled{opacity:.6;cursor:default;}
+.pw-error{font-size:12px;color:#f0645c;margin-top:8px;display:none;direction:rtl;text-align:right;}
+.pw-error.show{display:block;}
+.lock-feat-list{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+.lock-feat-row{display:flex;gap:11px;align-items:flex-start;background:var(--panel-2);border:1px solid var(--line);border-radius:var(--r3);padding:12px 14px;}
+.lock-feat-icon{flex-shrink:0;font-size:15px;line-height:1.5;opacity:0.85;}
+.lock-feat-row-text{font-size:12px;color:var(--ink-dim);line-height:1.6;direction:rtl;text-align:right;}
+.lock-feat-row-text strong{color:var(--ink);font-family:Georgia,serif;font-size:13px;font-weight:700;}
+@media(max-width:600px){.lock-card{padding:28px 20px;}}
+
+#subModal{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;}
+#subModal.open{display:flex;}
+.sub-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r1);padding:32px 26px;max-width:460px;width:100%;position:relative;margin:20px 0;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+.sub-close{position:absolute;top:16px;left:16px;width:30px;height:30px;border-radius:50%;background:var(--panel-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--ink-dim);font-size:14px;}
+.sub-step{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:var(--r3);padding:12px 14px;margin-bottom:8px;direction:rtl;}
+.sub-step-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--ink-faint);color:#04201c;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;}
+.sub-step-text{font-size:12.5px;color:var(--ink-dim);line-height:1.7;text-align:right;}
+.sub-step-text strong{display:block;color:var(--ink);font-size:13px;margin-bottom:2px;}
+</style>
+</head>
+<body>
+
+<div id="lockScreen">
+  <div class="lock-card">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="fm-name">FullMark</div>
+      <div class="fm-tagline">منصة التفوق الأكاديمي</div>
+    </div>
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="lock-badge">FullMark · زتونة سنة أولى طب أسنان</div>
+      <div class="lock-title">زتونة سنة أولى طب أسنان 🫒</div>
+    </div>
+    <div style="margin-bottom:14px;">
+      <button onclick="document.getElementById('subModal').classList.add('open')" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--emerald));color:#04201c;border:none;border-radius:10px;padding:13px;font-weight:700;font-size:14px;cursor:pointer;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">تفاصيل الاشتراك</button>
+    </div>
+    <div class="pw-label">كود التفعيل</div>
+    <div class="pw-wrap">
+      <input class="pw-input" type="text" id="pwInput" placeholder="مثال: DA1-7K2M9X" maxlength="30" autocomplete="off">
+      <button class="pw-btn" id="fmActivateBtn">دخول →</button>
+    </div>
+    <div class="pw-error" id="pwError"></div>
+    <div id="fmGateLoading" style="display:none;text-align:center;font-size:12px;color:var(--ink-faint);margin-top:10px;">⏳ جاري التحقق...</div>
+  </div>
+</div>
+
+<!-- SUBSCRIBE MODAL -->
+<div id="subModal">
+  <div class="sub-card">
+    <div class="sub-close" onclick="document.getElementById('subModal').classList.remove('open')">✕</div>
+    <div style="text-align:center;margin-bottom:20px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(21,184,166,0.5);margin-bottom:4px;">4.0 GPA</div>
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:700;color:var(--teal-2);">FullMark</div>
+      <div style="display:inline-block;margin-top:10px;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--emerald);border:1px solid rgba(52,211,153,0.3);padding:5px 16px;border-radius:20px;background:rgba(52,211,153,0.06);">الاشتراك في زتونة سنة أولى طب أسنان</div>
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:19px;font-weight:700;color:var(--ink);margin-top:10px;direction:rtl;">زتونة سنة أولى طب أسنان 🫒</div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(52,211,153,0.12),rgba(21,184,166,0.08));border:2px solid rgba(52,211,153,0.4);border-radius:16px;padding:20px 24px;margin-bottom:16px;text-align:center;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--emerald);margin-bottom:8px;">السعر</div>
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:52px;font-weight:700;color:var(--emerald);line-height:1;margin-bottom:8px;text-shadow:0 0 24px rgba(52,211,153,0.4);">100 جنيه</div>
+      <div style="font-size:13px;color:var(--emerald);font-weight:600;">✅ مرة واحدة فقط — بدون تجديد</div>
+    </div>
+    <div style="background:rgba(21,184,166,0.05);border:1px solid rgba(21,184,166,0.15);border-radius:12px;padding:16px 18px;margin-bottom:20px;font-size:13px;color:var(--ink-dim);line-height:1.9;direction:rtl;text-align:right;">
+      المرجع ده <strong style="color:var(--ink);">مش امتحان هتعديه وتنساه</strong> — ده خلاصة سنة أولى طب أسنان اللي المفروض تفهمها كويس قبل ما تدخل السنة التانية، لأنها <strong style="color:var(--teal-2);">أساس شغلك كطبيب أسنان</strong> بعد كده. 🦷<br><br>
+      حرصت <strong style="color:var(--ink);">FullMark</strong> على إنه يكون بالعربي وبأسلوب فهم لا حفظ، مع <strong style="color:var(--emerald);">أمثلة وربط بالتطبيق العملي</strong> مش مجرد سرد معلومات.<br><br>
+      نسأل الله لكم التوفيق والسداد. 🤲
+    </div>
+    <div class="lock-feat-list">
+      <div class="lock-feat-row"><span class="lock-feat-icon">🦷</span><div class="lock-feat-row-text"><strong>قسم Anatomy كامل</strong> — من الأساسيات للقواطع والأنياب والضواحك والأضراس واللبني والإطباق</div></div>
+      <div class="lock-feat-row"><span class="lock-feat-icon">🧪</span><div class="lock-feat-row-text"><strong>قسم Biomaterials كامل</strong> — الروابط الذرية، الالتصاق، الخواص الفيزيائية والبصرية والميكانيكية والتصنيف</div></div>
+      <div class="lock-feat-row"><span class="lock-feat-icon">🔑</span><div class="lock-feat-row-text"><strong>صفحات مرجع سريع وجداول مقارنة</strong> — عشان ترجعلها بسرعة وقت الحاجة، مش بس وقت الامتحان</div></div>
+      <div class="lock-feat-row"><span class="lock-feat-icon">🎯</span><div class="lock-feat-row-text"><strong>فهم يفضل معاك</strong> — مش مذاكرة تنساها بعد الامتحان، ده أساس هتحتاجه في الكلينيك</div></div>
+    </div>
+    <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;direction:rtl;text-align:right;">خطوات الاشتراك</div>
+    <div class="sub-step"><div class="sub-step-num">1</div><div class="sub-step-text"><strong>ادفع 100 جنيه — Vodafone Cash أو InstaPay</strong>الرقم: <strong style="color:var(--teal-2);font-size:15px;letter-spacing:1px;">01036119186</strong></div></div>
+    <div class="sub-step" style="border-color:rgba(21,184,166,0.5);background:rgba(21,184,166,0.08);"><div class="sub-step-num" style="background:var(--teal-2);">2</div><div class="sub-step-text"><strong>⚠️ لازم دلوقتي — ابعت /start لبوت تليجرام</strong>البوت هو اللي هيبعتلك الكود، ولو ما بعتلوش الأول مش هيقدر يوصلك حتى لو دفعت<br><a href="https://t.me/FullmarkEg_bot" target="_blank" style="display:inline-block;margin-top:8px;background:#0088cc;color:#fff;border-radius:8px;padding:8px 16px;font-weight:700;font-size:13px;text-decoration:none;">✈️ افتح @FullmarkEg_bot وابعت /start</a></div></div>
+    <div class="sub-step"><div class="sub-step-num">3</div><div class="sub-step-text"><strong>ارفع صورة الإيصال هنا مباشرةً</strong>واملأ اسمك ويوزر تليجرام بتاعك 📲</div></div>
+    <div class="sub-step"><div class="sub-step-num">4</div><div class="sub-step-text"><strong>استنى الكود على تليجرام ✅</strong>بيوصل خلال دقائق بإذن الله 🎉</div></div>
+
+    <!-- Upload Form -->
+    <div id="subFormWrap" style="margin-top:20px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;direction:rtl;text-align:right;">📋 بيانات الطلب</div>
+
+      <div style="margin-bottom:12px;">
+        <label style="display:block;font-size:12px;color:var(--ink-faint);margin-bottom:6px;direction:rtl;text-align:right;">الاسم الكامل</label>
+        <input id="subName" type="text" placeholder="مثال: أحمد محمد علي" style="width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:inherit;font-size:14px;direction:rtl;outline:none;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'">
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <label style="display:block;font-size:12px;color:var(--ink-faint);margin-bottom:6px;direction:rtl;text-align:right;">يوزر تليجرام (هيوصله الكود) 📲</label>
+        <div style="background:rgba(240,100,92,0.1);border:1px solid rgba(240,100,92,0.35);border-radius:8px;padding:8px 12px;margin-bottom:6px;font-size:12px;color:#f0645c;direction:rtl;">
+          ⚠️ متأكد إنك بعت <strong>/start</strong> لـ <a href="https://t.me/FullmarkEg_bot" target="_blank" style="color:#f0645c;font-weight:700;">@FullmarkEg_bot</a>؟ من غيرها الكود مش هيوصلك
+        </div>
+        <input id="subTelegram" type="text" placeholder="مثال: @ahmed_123" style="width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel-2);color:var(--ink);font-family:inherit;font-size:14px;direction:ltr;outline:none;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--line)'">
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:12px;color:var(--ink-faint);margin-bottom:6px;direction:rtl;text-align:right;">صورة الإيصال</label>
+        <label id="fileLabel" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px;border-radius:10px;border:2px dashed var(--line);background:var(--panel-2);cursor:pointer;transition:border-color 0.2s;direction:rtl;" onmouseover="this.style.borderColor='var(--teal)'" onmouseout="this.style.borderColor='var(--line)'">
+          <span id="fileLabelText" style="font-size:13px;color:var(--ink-faint);">📎 اضغط هنا لرفع صورة الإيصال</span>
+          <input id="subReceipt" type="file" accept="image/*" style="display:none;" onchange="fmFileChanged(this)">
+        </label>
+        <div id="subImgPreview" style="display:none;margin-top:10px;text-align:center;">
+          <img id="subImgThumb" src="" style="max-height:120px;border-radius:10px;border:1px solid var(--line);">
+        </div>
+      </div>
+
+      <div id="subFormError" style="display:none;background:rgba(240,100,92,0.1);border:1px solid rgba(240,100,92,0.3);border-radius:8px;padding:10px 14px;font-size:13px;color:#f0645c;direction:rtl;margin-bottom:12px;"></div>
+      <div id="subFormSuccess" style="display:none;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:10px;padding:14px 16px;font-size:13px;color:var(--emerald);direction:rtl;text-align:right;line-height:1.8;"></div>
+
+      <button id="subSubmitBtn" onclick="fmSubmitRequest()" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--emerald));color:#04201c;border:none;border-radius:10px;padding:13px;font-weight:700;font-size:14px;cursor:pointer;transition:opacity 0.2s;margin-top:4px;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+        إرسال الطلب ✉️
+      </button>
+    </div>
+
+    <div style="background:rgba(21,184,166,0.06);border:1px solid rgba(21,184,166,0.2);border-radius:10px;padding:12px;font-size:12px;color:var(--ink-faint);text-align:center;direction:rtl;margin-top:16px;">💬 <strong style="color:var(--teal-2);">مش قادر تدفع؟</strong> تواصل — ومتشيلش هم يا دكتور 🤍</div>
+    <a href="https://t.me/m84564694" target="_blank" style="display:block;margin-top:12px;background:linear-gradient(135deg,#0088cc,#006699);color:#fff;border-radius:10px;padding:13px;font-weight:700;font-size:14px;text-align:center;text-decoration:none;">✈️ تواصل على تيليجرام</a>
+    <a href="https://t.me/+UTZ1jfha0kU1NDY8" target="_blank" style="display:block;margin-top:8px;background:rgba(21,184,166,0.08);border:1px solid rgba(21,184,166,0.25);color:var(--teal-2);border-radius:10px;padding:13px;font-weight:700;font-size:14px;text-align:center;text-decoration:none;">📢 جروب المنصة على تيليجرام</a>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">🦷</div>
+      <div class="brand-text">
+        <h1>زتونة سنة أولى طب أسنان</h1>
+        <p>FULLMARK</p>
+      </div>
+    </div>
+    <button class="home-btn" onclick="goHome()">🏠 الرئيسية</button>
+  </div>
+</div>
+
+<div class="wrap" id="app"></div>
+
+<footer>
+  <div class="quran">"وَقُل رَّبِّ زِدْنِي عِلْمًا"</div>
+  FullMark © — زتونة سنة أولى طب أسنان، مش بديل عن المحاضرات الأصلية
+</footer>
+
+<script>
+const SECTIONS = [
+{
+  id:'anatomy',
+  icon:'🦷',
+  titleAr:'تشريح الأسنان',
+  navLabel:'Anatomy',
+  descAr:'كل سن في الفم — شكله، جذوره، قنواته — بشكل مرتب يخليك تفرق بينهم بسهولة. المصطلحات إنجليزي زي ما ذاكرتها، والشرح عربي عشان الفهم.',
+  chipTopics:['Incisors','Canines','Premolars','Molars','Deciduous','Pulp Cavities','Occlusion','Master Table'],
+  topics:[
+{
+  navLabel:'Foundations',
+  eyebrow:'قبل ما تبدأ',
+  titleAr:'الأساسيات اللي لازم تتعلمها قبل أي سن',
+  titleEn:'Foundations of Dental Anatomy',
+  html:`
+<div class="topic-block">
+<h3>ليه محتاجين "لغة" موحدة قبل ما نتكلم عن أي سن؟</h3>
+<p>لو قلتلك "السطح اللي بيقابل الخد" هيتلخبط الكلام مع كل سن. عشان كده كل الأسنان بتتكلم بنفس الـ <b>terminology</b>، وأول حاجة المفروض تتقنها هي المصطلحات دي بالإنجليزي زي ما هي، لأن كل شرح جاي بعد كده هيستخدمها من غير ما نعيد شرحها.</p>
+</div>
+
+<div class="topic-block">
+<h3>Arches, Quadrants & Tooth Types</h3>
+<p>الفم مقسوم لـ <b>Maxillary arch</b> (علوي) و<b>Mandibular arch</b> (سفلي)، وكل arch بينقسم بخط وهمي في النص اسمه <b>Midline</b> لنصفين، كل نص اسمه <b>Quadrant</b> — يعني الفم فيه 4 quadrants.</p>
+<p>في كل quadrant، الأسنان الدائمة 8: <b>Incisors</b> (قاطعين) للقطع، <b>Canine</b> (ناب) للتمزيق، <b>Premolars</b> (ضاحكين) للتمزيق والطحن، و<b>Molars</b> (3 أضراس) للطحن. اجمعهم × 4 quadrants = 32 permanent teeth.</p>
+<div class="why-box"><b>ليه الشكل مختلف من سن للتاني؟</b> شكل كل سن له علاقة مباشرة بوظيفته — الـ Incisor حرفه حاد عشان يقطع، الـ Canine مدبب عشان يمزق، والـ Molar عريض ومسطح عشان يطحن. لما تفهم الوظيفة، هتتوقع الشكل من غير ما تحفظه.</div>
+</div>
+
+<div class="topic-block">
+<h3>The Three Dentitions</h3>
+<div class="chrono-grid">
+<div class="chrono-card"><div class="v">Deciduous</div><div class="l">20 teeth · 6 months – 3 years</div></div>
+<div class="chrono-card"><div class="v">Permanent</div><div class="l">32 teeth · 6 – 21 years</div></div>
+<div class="chrono-card"><div class="v">Mixed</div><div class="l">6 – 12 years · الاتنين موجودين</div></div>
+<div class="chrono-card"><div class="v">No predecessor</div><div class="l">الـ 3 permanent molars</div></div>
+</div>
+<div class="note-box"><b>مهم تفتكرها:</b> الـ <b>permanent molars</b> (1, 2, 3) بتظهر في مكان فاضي في الـ jaw — مش بتستبدل deciduous tooth زي باقي الأسنان، يعني معندهاش predecessor.</div>
+</div>
+
+<div class="topic-block">
+<h3>Tooth Numbering Systems</h3>
+<ul>
+<li><b>Palmer system:</b> شكل صليب يقسم الفم لـ4 quadrants، وكل permanent tooth رقمه من 1-8، والـ deciduous بحرف A-E.</li>
+<li><b>FDI system</b> (المعتمد عالمياً): رقمين — الأول للـ quadrant (1-4 permanent، 5-8 deciduous)، والتاني لمكان السن (1-8). مثال: <b>11</b> = maxillary right central incisor.</li>
+<li><b>Universal system:</b> الـ permanent بيترقم كله من 1 لـ32 بالتتابع، والـ deciduous من A لـT.</li>
+</ul>
+<div class="why-box"><b>ليه تتعلمها؟</b> لو دكتور قالك "tooth 21"، محتاج تعرف فوراً ده أنهي سن من غير ما تعد على صوابعك. الـ FDI هو المعتمد عالمياً فركز عليه.</div>
+</div>
+
+<div class="topic-block">
+<h3>Macro-anatomy of the Tooth</h3>
+<ul>
+<li><b>Anatomical Crown:</b> الجزء المغطى بالـ <b>Enamel</b> — أصلب مادة في جسم الإنسان، avascular (بلا أوعية دموية) وملهاش أعصاب، ومش بتتجدد لو اتكسرت أو اتأكلت (cannot regenerate).</li>
+<li><b>Clinical Crown:</b> الجزء الظاهر فعلياً في الفم فوق الـ gingiva.</li>
+<li><b>Root:</b> مغطى بـ <b>Cementum</b>، وهو اللي بيربط السن بالعظم عن طريق الـ <b>PDL (Periodontal Ligament)</b> باستخدام Sharpey's fibers.</li>
+<li><b>Pulp:</b> النسيج الحي جوه السن — فيه nerves و blood vessels، وهو مصدر حيوية السن (vitality).</li>
+<li><b>Dentin:</b> بيكوّن معظم حجم السن، وفيه قنوات دقيقة اسمها <b>dentinal tubules</b> هي سبب الإحساس بالـ sensitivity.</li>
+</ul>
+<div class="note-box"><b>CEJ (Cementoenamel Junction):</b> هو الخط اللي بيفصل الـ enamel (فوق) عن الـ cementum (تحت) — يعني بيفصل الـ anatomical crown عن الـ root. هتلاقي المصطلح ده متكرر مع كل سن.</div>
+</div>
+
+<div class="topic-block">
+<h3>Tooth Surfaces & Landmarks</h3>
+<p><b>الأسطح:</b> <b>Labial</b> (تجاه الشفة)، <b>Lingual/Palatal</b> (تجاه اللسان/الحنك)، <b>Mesial</b> (القريب من الـ midline)، <b>Distal</b> (البعيد عنه)، <b>Incisal edge</b> (حرف القطع للأمامي) أو <b>Occlusal surface</b> (سطح الطحن للخلفي). الخلفي كمان له سطح <b>Buccal</b> (تجاه الخد).</p>
+<p><b>Elevations:</b> <b>Cusp</b> (نتوء حاد وتحته pulp horn)، <b>Tubercle</b> (نتوء صغير آمن الإزالة، بعكس الـ Cusp)، <b>Ridge</b> (حرف طولي)، <b>Cingulum</b> (انتفاخ لساني في الـ cervical third للأسنان الأمامية)، <b>Mamelons</b> (3 نتوءات على الـ incisal edge الجديد بتتآكل مع الاستخدام).</p>
+<p><b>Depressions:</b> <b>Groove</b> (أخدود بين lobes)، <b>Fissure</b> (شق عميق عرضة للتسوس)، <b>Pit</b> (نقطة التقاء grooves)، <b>Fossa</b> (حفرة واسعة)، <b>Sulcus</b> (وادي عريض).</p>
+<div class="why-box"><b>الفرق العملي المهم:</b> إزالة الـ <b>Cusp</b> بتأثّر على الـ pulp لأن فيه pulp horn تحتها مباشرة، لكن إزالة الـ <b>Tubercle</b> آمنة لأنها مجرد زيادة enamel. ده بيفرق في العلاج الفعلي.</div>
+</div>
+`
+},
+{
+  navLabel:'Incisors',
+  eyebrow:'المجموعة الأمامية',
+  titleAr:'القواطع (Incisors)',
+  titleEn:'Maxillary & Mandibular Incisors',
+  html:`
+<div class="topic-block">
+<h3>ليه شكل الـ Incisor كده؟</h3>
+<p>الـ Incisors الأربعة في كل arch (central + lateral × جانبين) وظيفتهم القطع، فالـ <b>incisal edge</b> رفيع وحاد بالنسبة للأسنان التانية. من منظور جانبي شكلهم زي "إسفين" — قاعدة عريضة عند الـ cervical وقمة رفيعة عند الـ incisal edge.</p>
+</div>
+
+<div class="topic-block">
+<h3>Maxillary Central Incisor</h3>
+<div class="chrono-grid">
+<div class="chrono-card"><div class="v">3-4 months</div><div class="l">First calcification</div></div>
+<div class="chrono-card"><div class="v">4-5 years</div><div class="l">Crown completed</div></div>
+<div class="chrono-card"><div class="v">7-8 years</div><div class="l">Eruption</div></div>
+<div class="chrono-card"><div class="v">10-11 years</div><div class="l">Root completion</div></div>
+</div>
+<p><b>الشكل العام (Labial aspect):</b> شكله <b>Trapezoid</b> — أقصر ضلع عند الـ cervical. الزاوية <b>Mesioincisal</b> حادة/قايمة (sharp)، لكن الزاوية <b>Distoincisal</b> مدورة (rounded) — ده أهم فرق بصري يميزه.</p>
+<p><b>من الـ Mesial aspect:</b> شكله triangular (قاعدته عند الـ cervix، قمته عند الـ incisal)، وأكبر انحناء للـ CEJ في كل الأسنان بيحصل هنا (<b>3.5 mm</b>).</p>
+<div class="note-box"><b>علامة مميزة:</b> جذر واحد conical بيميل شوية للخلف (distally)، وعلى الـ Lingual surface هتلاقي <b>cingulum</b> واضح و lingual fossa بين marginal ridges.</div>
+</div>
+
+<div class="topic-block">
+<h3>Maxillary Lateral Incisor</h3>
+<p>شكله زي الـ central بس بمقاس أصغر — <b>except root length</b> اللي بيكون أطول نسبياً. أهم حاجة فيه إنه <b>the most variable tooth</b> في الشكل — ممكن يجي <b>peg-shaped</b> أو conical أو حتى congenitally absent، وهو ثاني أكتر سن بيكون غايب خلقياً بعد الـ 3rd molar.</p>
+<div class="why-box"><b>ليه يبقى فيه lingual pit؟</b> بسبب عمق الـ lingual fossa الزيادة عنده، ده بيخليه أكتر عرضة للتسوس (caries-prone) من الـ central — نقطة مهمة سريرياً.</div>
+</div>
+
+<div class="topic-block">
+<h3>Mandibular Incisors</h3>
+<p><b>Smallest teeth</b> في الفم كله من ناحية الـ mesiodistal dimension. وهنا الوضع بينعكس عن الفك العلوي: <b>central أصغر من lateral</b> (في العلوي كان العكس).</p>
+<p>الـ Mandibular Central Incisor شبه متماثل تماماً (<b>bilateral symmetry</b>) وهو <b>أول permanent tooth بيبزغ</b> في الفم (6-7 years). الـ Lateral أكبر شوية وتاجه بيميل للخلف (crown tilts distally).</p>
+<div class="note-box">علامة تشريحية دقيقة: في الـ mandibular central، الـ incisal ridge واقع بالظبط <b>on the vertical root axis</b> — بعكس الـ maxillary central اللي فيه الـ ridge بيبقى lingual to axis شوية.</div>
+</div>
+
+<div class="topic-block">
+<h3>جدول مقارنة سريع</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>Tooth</th><th>Labial outline</th><th>Eruption</th><th>أهم علامة</th></tr>
+<tr><td><b>Max Central</b></td><td>Trapezoid</td><td>7-8y</td><td>Greatest CEJ curvature (3.5mm)</td></tr>
+<tr><td><b>Max Lateral</b></td><td>Smaller trapezoid</td><td>8-9y</td><td>Most variable tooth</td></tr>
+<tr><td><b>Mand Central</b></td><td>Symmetrical trapezoid</td><td>6-7y (first in mouth)</td><td>Incisal ridge on root axis</td></tr>
+<tr><td><b>Mand Lateral</b></td><td>Larger than central</td><td>7-8y</td><td>Crown tilts distally</td></tr>
+</table></div>
+</div>
+`
+},
+{
+  navLabel:'Canines',
+  eyebrow:'المجموعة الأمامية',
+  titleAr:'الأنياب (Canines)',
+  titleEn:'Permanent Canines',
+  html:`
+<div class="topic-block">
+<h3>ليه الـ Canine مختلف؟</h3>
+<p>الـ Canine هو <b>the only tooth with a single cusp</b> بدل الحرف المسطح، وده بيديه شكل مدبب يناسب وظيفته في التمزيق. وهو كمان <b>longest root</b> في الفم و<b>last tooth to be lost</b> عادة — عشان كده بيتسمى <b>cornerstone of the dental arch</b>، لأنه بيدعم عضلات الوش.</p>
+</div>
+
+<div class="topic-block">
+<h3>Maxillary Canine</h3>
+<div class="chrono-grid">
+<div class="chrono-card"><div class="v">4-5 months</div><div class="l">First calcification</div></div>
+<div class="chrono-card"><div class="v">6-7 years</div><div class="l">Crown completed</div></div>
+<div class="chrono-card"><div class="v">11-12 years</div><div class="l">Eruption</div></div>
+<div class="chrono-card"><div class="v">13-15 years</div><div class="l">Root completion</div></div>
+</div>
+<p>من الـ Labial aspect شكله <b>Pentagon</b>. الـ <b>cusp tip</b> بتميل شوية <b>mesial</b>، والميل ده بيخلي الـ distal slope أطول من الـ mesial slope. فيه <b>labial ridge</b> بارز واضح.</p>
+</div>
+
+<div class="topic-block">
+<h3>Mandibular Canine</h3>
+<p>بيبزغ أبكر من العلوي (9-10 years). الفرق الجوهري: الـ <b>cusp tip</b> هنا واقعة بالظبط <b>on the long axis</b> (مش مايلة زي العلوي)، والـ slopes شبه متساوية في الطول. الجذر أحياناً بيكون <b>bifurcated</b>.</p>
+<div class="why-box"><b>أسهل طريقة تفرق بيهم:</b> اسأل نفسك "الـ cusp tip مايلة ولا على الـ axis؟" لو مايلة mesial = maxillary. لو on the axis بالظبط = mandibular.</div>
+</div>
+`
+},
+{
+  navLabel:'Premolars',
+  eyebrow:'المجموعة الخلفية',
+  titleAr:'الضواحك (Premolars)',
+  titleEn:'Maxillary & Mandibular Premolars',
+  html:`
+<div class="topic-block">
+<h3>وظيفة الـ Premolars</h3>
+<p>الـ Premolars بتعمل الوظيفتين: tearing و grinding، فهي مرحلة انتقالية بين الـ Canines والـ Molars. عندها عادة نتوءين (buccal + lingual/palatal cusp) بعكس الـ Canine (نتوء واحد) والـ Molars (أكتر من اتنين).</p>
+</div>
+
+<div class="topic-block">
+<h3>Maxillary First Premolar</h3>
+<p><b>العلامة المميزة اللي متتنساش:</b> <b>Mesial marginal ridge groove</b> — ده أهم حاجة تفرقه بيها. الـ Occlusal outline بتاعه <b>hexagonal</b> بسبب الـ concavity في الـ mesial outline.</p>
+<p>غالباً بيكون له <b>two canals</b> (buccal + palatal) — علامة تشريحية مهمة وقت العلاج.</p>
+</div>
+
+<div class="topic-block">
+<h3>Maxillary Second Premolar</h3>
+<p>الفرق الجوهري عن الأول: <b>no mesial marginal ridge groove</b>، والـ cusps فيه أكتر تساوي في الارتفاع، والـ occlusal outline <b>oval</b> مش hexagonal. وغالباً بيكون له <b>single canal</b> بس (بعكس الأول).</p>
+<div class="note-box"><b>خلاصة سريعة:</b> No groove + single canal + oval outline + equal cusps = 2nd premolar.</div>
+</div>
+
+<div class="topic-block">
+<h3>Mandibular First Premolar — "The Transitional Tooth"</h3>
+<p>ده السن اللي بيشبه الـ Canine والـ 2nd Premolar في نفس الوقت:</p>
+<ul>
+<li><b>بيشبه الـ mandibular canine:</b> الـ buccal cusp طويل وحاد وهو <b>the only occluding cusp</b>، والـ lingual cusp صغير وغير وظيفي (non-functioning).</li>
+<li><b>بيشبه الـ 2nd premolar:</b> عنده أكتر من cusp، والـ mesial/distal contact areas في نفس المستوى تقريباً.</li>
+</ul>
+<div class="why-box"><b>ليه الـ lingual cusp صغير كده؟</b> لأنه بس <b>2/3 of the buccal cusp length</b> — عشان كده مش بيشارك في الـ occlusion الفعلي، والـ buccal cusp وحده هو اللي بيطحن.</div>
+</div>
+
+<div class="topic-block">
+<h3>Mandibular Second Premolar</h3>
+<p>أكبر من الأول، وله نوعين شائعين: <b>Three-cusp type</b> (نمط أخاديد <b>'Y' groove pattern</b> — الأكثر شيوعاً) أو <b>Two-cusp type</b> (نمط <b>'U' or 'H' groove pattern</b>). مفيش فيه mesiolingual developmental groove اللي كان موجود في الأول.</p>
+</div>
+
+<div class="topic-block">
+<h3>جدول مقارنة — Premolars</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>Tooth</th><th>Common canals</th><th>Occlusal outline</th><th>أهم علامة</th></tr>
+<tr><td><b>Max 1st PM</b></td><td>Two (B+P)</td><td>Hexagonal</td><td>Mesial marginal ridge groove present</td></tr>
+<tr><td><b>Max 2nd PM</b></td><td>Single</td><td>Oval</td><td>No groove, equal cusps</td></tr>
+<tr><td><b>Mand 1st PM</b></td><td>Single (rarely 2)</td><td>Diamond/circular</td><td>Lingual cusp non-functional (transitional)</td></tr>
+<tr><td><b>Mand 2nd PM</b></td><td>Single</td><td>Square (Y) or circular (U/H)</td><td>3-cusp type more common</td></tr>
+</table></div>
+</div>
+`
+},
+{
+  navLabel:'Molars',
+  eyebrow:'المجموعة الخلفية',
+  titleAr:'الأضراس (Molars)',
+  titleEn:'Maxillary & Mandibular Molars',
+  html:`
+<div class="topic-block">
+<h3>وظيفة الـ Molars</h3>
+<p>الـ Molars هي أكبر الأسنان وعندها أكتر عدد cusps — وظيفتها الـ grinding النهائي للطعام قبل البلع. كل molar عنده أكتر من root (2 في السفلي، 3 في العلوي) عشان يتحمل قوى الطحن ويوزعها على مساحة أوسع في الـ bone.</p>
+</div>
+
+<div class="topic-block">
+<h3>Maxillary First Molar — أكبر سن في الـ maxillary arch</h3>
+<div class="chrono-grid">
+<div class="chrono-card"><div class="v">At birth</div><div class="l">First calcification</div></div>
+<div class="chrono-card"><div class="v">3-4 years</div><div class="l">Crown completed</div></div>
+<div class="chrono-card"><div class="v">6-7 years</div><div class="l">Eruption ("six-year molar")</div></div>
+<div class="chrono-card"><div class="v">9-10 years</div><div class="l">Root completion</div></div>
+</div>
+<p>عنده <b>4 functioning cusps</b> (mesiobuccal, distobuccal, mesiolingual, distolingual) + نتوء خامس صغير اختياري اسمه <b>tubercle of Carabelli</b> على الجانب الـ lingual من الـ mesiolingual cusp — علامة مميزة لهذا السن بس (بتختفي تدريجياً في الـ 2nd و 3rd molar).</p>
+<p><b>الـ Roots:</b> 3 roots — <b>mesiobuccal</b> (عريض)، <b>distobuccal</b> (أضيق root)، و<b>palatal root</b> طويل شكله "banana-shaped" وهو أطول جذر في السن ده.</p>
+<div class="note-box"><b>علامة مهمة:</b> السطح اللساني في السن ده من القلائل بين كل الأسنان الدائمة اللي معندوش <b>lingual convergence</b> خالص، رغم وجود buccal convergence و distal convergence.</div>
+</div>
+
+<div class="topic-block">
+<h3>Maxillary Second & Third Molar</h3>
+<p><b>الـ Second Molar</b> ("twelve-year molar"): جذوره بنفس طول الأول أو أطول شوية، لكن الـ <b>distolingual cusp</b> أقل تطوراً، ومفيهوش tubercle of Carabelli. شكله من فوق يا إما زي الأول (بس أكتر rhomboidal) يا إما <b>heart-shaped</b> زي الـ third molar.</p>
+<p><b>الـ Third Molar</b> (wisdom tooth): أصغر وأكتر سن متغير الشكل في الفك العلوي، شكله الشائع heart-shaped، وجذوره غالباً fused.</p>
+</div>
+
+<div class="topic-block">
+<h3>Mandibular First Molar — "The Key of Occlusion"</h3>
+<p>أول permanent tooth بيبزغ في الفم كله (6-7 years) وما بيخلفش deciduous tooth (not succedaneous). عنده <b>5 functional cusps</b> — أكتر من أي mandibular tooth تاني: mesiobuccal, distobuccal, distal, mesiolingual, distolingual. ترتيبهم بالحجم: <b>MB > lingual cusps > DB > distal</b> (الأصغر).</p>
+<div class="why-box"><b>ليه اسمه "Key of Occlusion"؟</b> لأن الـ mesiobuccal cusp للـ maxillary first molar لازم يستقر بالظبط في الـ mesiobuccal groove لهذا الضرس السفلي — العلاقة دي هي المرجع لتقييم الإطباق الطبيعي بالكامل.</div>
+<p>الـ roots طولها تقريباً <b>2× crown length</b>، وشكل الـ occlusal outline hexagonal أو pentagonal (بعكس الـ rhomboidal shape للعلوي).</p>
+</div>
+
+<div class="topic-block">
+<h3>Mandibular Second & Third Molar</h3>
+<p><b>الـ Second Molar</b>: بس <b>4 cusps</b> (من غير الـ distal cusp)، أصغر وأكتر symmetrical من الأول. <b>الـ Third Molar</b>: أكتر سن متغير في الفك السفلي، بيبزغ متأخر (17-21 years).</p>
+</div>
+
+<div class="topic-block">
+<h3>جدول مقارنة — Permanent Molars</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th></th><th>Cusps</th><th>Roots</th><th>Occlusal outline</th><th>أهم علامة</th></tr>
+<tr><td><b>Max 1st</b></td><td>4 (+Carabelli)</td><td>3</td><td>Rhomboidal</td><td>No lingual convergence</td></tr>
+<tr><td><b>Max 2nd</b></td><td>4</td><td>3</td><td>Rhomboidal/heart</td><td>No Carabelli</td></tr>
+<tr><td><b>Mand 1st</b></td><td>5</td><td>2</td><td>Hexagonal/pentagonal</td><td>Key of occlusion</td></tr>
+<tr><td><b>Mand 2nd</b></td><td>4</td><td>2</td><td>Hexagonal</td><td>No distal cusp</td></tr>
+</table></div>
+</div>
+`
+},
+{
+  navLabel:'Deciduous',
+  eyebrow:'الطقم اللبني',
+  titleAr:'الأسنان اللبنية (Deciduous Teeth)',
+  titleEn:'Primary Dentition',
+  html:`
+<div class="topic-block">
+<h3>ليه الـ Deciduous Teeth مهمة أصلاً؟</h3>
+<ul>
+<li><b>Mastication</b> والتغذية أثناء الطفولة.</li>
+<li><b>Facial appearance</b> — بتحافظ على الشكل الطبيعي والراحة النفسية للطفل.</li>
+<li><b>Speech</b> — الأسنان الأمامية ضرورية للـ consonant pronunciation.</li>
+<li><b>Space maintainer</b> — بتحجز المكان للـ permanent successor.</li>
+</ul>
+<div class="why-box"><b>فكرة أساسية:</b> فقدان الـ deciduous tooth بدري (قبل معاده الطبيعي) بيسبب crowding للأسنان الدائمة بعدين، لأن المكان المحجوز بيضيع.</div>
+</div>
+
+<div class="topic-block">
+<h3>الفروق العامة بين الـ Deciduous والـ Permanent</h3>
+<p><b>في التاج:</b> لون أفتح وأكتر opaque (تمعدن أقل / less mineralized). أقصر cervico-incisally لكن أعرض mesiodistally بالنسبة لطوله. الـ <b>cervical ridge</b> أبرز وبينتهي الـ enamel فجأة (مش gradually زي الدائم). ومفيش mamelons على الـ incisal edge. ملحوظة غريبة: <b>deciduous 2nd molar أكبر من الـ 1st molar</b> (عكس الدائم تماماً).</p>
+<p><b>في الجذور والـ Pulp:</b> الـ roots بتكتمل بعد سنة تقريباً من الـ eruption (الدائم بياخد حوالي 3 سنين)، وبتتعرض لـ <b>physiologic resorption</b> طبيعي عشان تفسح المجال للـ permanent tooth — ده طبيعي في اللبني، لكنه في الدائم بيبقى علامة مرضية (pathologic). جذور الأسنان الخلفية بتكون <b>widely flared</b> عشان تدي مساحة لـ developing permanent buds تحتها.</p>
+<div class="note-box"><b>تنبيه سريري:</b> الـ enamel والـ dentin أرفع في اللبني (thinner)، يعني الـ pulp chamber proportionately أكبر وأقرب للسطح الخارجي، وقرون الـ pulp horns فيه <b>higher and more prominent</b> — يعني احتمال الـ pulp exposure أثناء cavity preparation أعلى بكتير. خد بالك وانت بتشتغل!</div>
+</div>
+
+<div class="topic-block">
+<h3>الـ Deciduous Molars بالتفصيل</h3>
+<p><b>Deciduous Maxillary First Molar (D):</b> شكله غريب وملوش شبيه واضح — أقرب حاجة يشبهها هي الـ permanent premolar مش أي molar. عنده 4 cusps (الـ mesiolingual هو الأكبر) و cervical ridge بارز جداً ناحية الـ mesial (خصوصاً على الـ mesiobuccal).</p>
+<p><b>Deciduous Maxillary Second Molar (E):</b> شبيه جداً بالـ permanent maxillary first molar، وعنده <b>cusp of Carabelli</b> زيه بالظبط.</p>
+<p><b>Deciduous Mandibular First Molar (D):</b> "the strangest tooth" — ملوش شبيه لا في اللبني ولا الدائم. عنده 4 cusps (<b>MB > ML > DB > DL</b> بالحجم) والـ mesial cusps أكبر بوضوح من الـ distal cusps.</p>
+<p><b>Deciduous Mandibular Second Molar (E):</b> شبيه بالـ permanent mandibular first molar، لكن بـ5 cusps و root أمامي (mesial) أطول وأعرض من البعيد (distal).</p>
+</div>
+
+<div class="topic-block">
+<h3>اعتبارات سريرية عملية</h3>
+<ul>
+<li>الـ enamel والـ dentin الرقيقين بيتطلبوا حرص زيادة أثناء cavity preparation.</li>
+<li>الـ cervical ridge البارز لازم يتاخد بالاعتبار عند تحضير crown — بتحتاج reduction أكتر.</li>
+<li>الـ root flare الزيادة بيستوجب حرص أكتر وقت الـ extraction.</li>
+<li>خلع مبكر = محتاج <b>space maintainer</b> لمنع الـ crowding.</li>
+</ul>
+</div>
+`
+},
+{
+  navLabel:'Pulp Cavities',
+  eyebrow:'مواضيع عامة',
+  titleAr:'تجاويف اللب (Pulp Cavities)',
+  titleEn:'Pulp Chambers & Root Canals',
+  html:`
+<div class="topic-block">
+<h3>المكونات الأساسية</h3>
+<p>الـ Pulp Cavity = <b>Pulp Chamber</b> في الـ crown + <b>Root Canals</b> في الـ root. الـ <b>Pulp Horns</b> هي امتدادات بتتجه تجاه كل cusp — يعني عدد pulp horns = عدد الـ cusps. القنوات بتفتح على floor الـ chamber وبتنتهي بـ <b>apical foramen</b> عند طرف الجذر.</p>
+<div class="why-box"><b>ليه نتعلم ده؟</b> عشان في root canal treatment، لازم تعرف مسبقاً كام قناة متوقعة في السن ده وشكلها، وإلا ممكن تسيب canal من غير علاج وده بيفشل العلاج كله.</div>
+</div>
+
+<div class="topic-block">
+<h3>Weine Canal Classification</h3>
+<ul>
+<li><b>Type I:</b> 1 canal, 1 foramen.</li>
+<li><b>Type II:</b> 2 canals join before apex, 1 foramen.</li>
+<li><b>Type III:</b> 2 canals, 2 separate foramina.</li>
+<li><b>Type IV:</b> 1 canal divides in apical third.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>أرقام مهمة لازم تحفظها</h3>
+<ul>
+<li><b>Maxillary Incisors:</b> 3 pulp horns (الـ central أطولها)، single canal عريضة labiolingually.</li>
+<li><b>Canine:</b> largest single-rooted pulp cavity — قرن واحد، قناة واحدة (الـ mandibular canine أحياناً 2 canals).</li>
+<li><b>Mandibular 1st Premolar:</b> النتوء اللساني الصغير ممكن يبقى الـ lingual pulp horn غايب تماماً (may be entirely absent).</li>
+<li><b>Maxillary 1st Molar:</b> الـ mesiobuccal root بيحتوي على <b>2 canals in ~60% of cases</b> — أشهر مكان بينسى فيه الأطباء قناة إضافية.</li>
+<li><b>Maxillary 2nd Molar:</b> الـ mesiobuccal root غالباً <b>only 1 canal</b> (بعكس الأول).</li>
+<li><b>Mandibular 1st Molar:</b> <b>3 canals in ~70%</b> من الحالات (2 mesial + 1 distal)، و<b>4 canals in ~30%</b>.</li>
+</ul>
+<div class="note-box"><b>خلاصة عملية:</b> كل ما زاد عدد الـ roots، زادت احتمالية وجود قنوات إضافية غير متوقعة — الـ radiographic examination قبل العلاج ضروري دايماً.</div>
+</div>
+`
+},
+{
+  navLabel:'Physiologic Form',
+  eyebrow:'مواضيع عامة',
+  titleAr:'الشكل الفسيولوجي للسن',
+  titleEn:'Physiologic Tooth Form',
+  html:`
+<div class="topic-block">
+<h3>الفكرة الأساسية</h3>
+<p>شكل السن مش عشوائي — كل تفصيلة فيه (الشكل، زاوية الميل، مناطق التلامس) بتخدم غرض وظيفي واحد: حماية الـ <b>Periodontium</b> (gingiva, PDL, cementum, alveolar bone) أثناء المضغ. لو الشكل اتغير بحشو أو تاج غلط، الأنسجة دي بتتعرض للأذى.</p>
+</div>
+
+<div class="topic-block">
+<h3>Proximal Contact Relation</h3>
+<p>هي نقطة التقاء السن بجاره في نفس الـ arch. كل الأسنان بيبقى ليها contact أمامي وخلفي، ما عدا <b>third molar</b> اللي بيتلامس بس من جهة واحدة.</p>
+<div class="why-box"><b>ليه الـ contact مهم؟</b> بيمنع <b>food impaction</b> بين الأسنان، بيثبّت الـ dental arch كوحدة واحدة، وبيوزع الـ masticatory forces. لو ضاع الـ contact (زي حالة الـ <b>Diastema</b>)، بيحصل انزلاق للطعام وميل للأسنان يسبب <b>occlusal trauma</b> لاحقاً.</div>
+</div>
+
+<div class="topic-block">
+<h3>المسافات والفراغات الوقائية</h3>
+<ul>
+<li><b>Interproximal Spaces:</b> triangularly shaped، مليانة بالـ gingival papillae، بتحمي الـ blood vessels والـ nerve supply.</li>
+<li><b>Embrasures (Spillways):</b> الفراغ المفتوح حوالين الـ contact area (buccal, lingual, incisal/occlusal) — بيسمح للطعام يهرب أثناء المضغ بدل ما يتحشر، وبيدي self-cleansing للسن.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>الانحناء والميل — ليه شكلهم كده؟</h3>
+<p><b>Height of Contour:</b> في الـ facial surface دايماً في الـ <b>cervical third</b>، وفي الـ lingual surface للأسنان الأمامية بردو في الـ cervical third (cingulum) — لكن في الخلفية بيكون في الـ <b>middle third</b> (إلا الـ mandibular 2nd premolar: في الـ occlusal third).</p>
+<div class="why-box"><b>الوظيفة:</b> الانحناء ده بيحمي الـ gingiva من صدمة الطعام أثناء المضغ عن طريق تحويل مسار الطعام بعيد عنها، وبردو بيدّيها massage خفيف طبيعي. حشو أو تاج بانحناء زيادة أو ناقص بيسبب مشاكل periodontal.</div>
+<p><b>Crown & Root Angulation:</b> الأسنان الخلفية السفلية بتميل تاجها lingually قليلاً عشان تتماشى مع محور نظيرتها العلوية وقت الإطباق — لو الميل ده اتلغى، هتتصادم الـ cusps بدل ما تتطابق.</p>
+</div>
+`
+},
+{
+  navLabel:'Occlusion',
+  eyebrow:'مواضيع عامة',
+  titleAr:'الإطباق (Occlusion)',
+  titleEn:'Dental Occlusion',
+  html:`
+<div class="topic-block">
+<h3>مصطلحات أساسية لازم متتلخبطش فيهم</h3>
+<ul>
+<li><b>Centric Occlusion:</b> أقصى تقارب/تشابك بين أسنان الفكين (maximum intercuspation)، بيحصل أثناء الـ swallowing.</li>
+<li><b>Centric Relation:</b> وضع الـ condyle في أقصى مكان posterior-superior — علاقة عظمية بحتة، مش علاقة أسنان.</li>
+</ul>
+<div class="note-box">الاتنين مختلفين تماماً: واحد بيتكلم عن الأسنان، التاني بيتكلم عن الـ joint — غلطة شائعة تخلطهم مع بعض.</div>
+<p><b>Freeway Space:</b> حوالي <b>2 mm</b> بين الفكين وقت الـ rest position (مش بيتلامسوا) — دي مسافة non-functional.</p>
+</div>
+
+<div class="topic-block">
+<h3>ترتيب بزوغ الأسنان في الـ Arch</h3>
+<p>الترتيب العام: <b>6 → 1,2 → 4,5 → 3,7 → 8</b>. لو الـ 2nd molar بزغ بدري، ممكن يزاحم الـ premolars.</p>
+<div class="why-box"><b>Leeway Space (~4.8mm):</b> الـ deciduous molars أعرض من الـ premolars الدائمة اللي هتحل مكانها، فالفرق ده بيدي مساحة إضافية بتساعد تصحح الـ molar relationship تلقائياً.</div>
+</div>
+
+<div class="topic-block">
+<h3>Overbite و Overjet</h3>
+<p>لأن الـ maxillary arch أكبر شوية من السفلي بشكل طبيعي، بيحصل تراكب: <b>Overbite</b> = التراكب الرأسي (vertical overlap)، و<b>Overjet</b> = التراكب الأفقي (horizontal overlap).</p>
+</div>
+
+<div class="topic-block">
+<h3>Compensatory Curves</h3>
+<ul>
+<li><b>Curve of Spee:</b> sagittal only (الاتجاه الأمام-الخلف).</li>
+<li><b>Curve of Wilson:</b> coronal only (الاتجاه العرضي).</li>
+<li><b>Curve of Monson:</b> بيجمع الاتنين معاً، ويكوّن جزء من sphere نصف قطرها <b>4 inches</b> ومركزها عند الـ <b>glabella</b>.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Key of Occlusion وقاعدة "كل سن بيقابل اتنين"</h3>
+<p><b>Supporting Cusps:</b> maxillary lingual + mandibular buccal. <b>Guiding Cusps:</b> maxillary buccal + mandibular lingual.</p>
+<p><b>Key of Occlusion:</b> upper & lower first molars — الـ MB cusp للـ upper 6 المفروض يستقر بالظبط في الـ MB groove للـ lower 6.</p>
+<div class="note-box">كل سن بيقابل <b>two opposing teeth</b>، ما عدا <b>mandibular central incisor</b> و<b>maxillary third molar</b> اللي كل واحد فيهم بيقابل سن واحد بس.</div>
+</div>
+
+<div class="topic-block">
+<h3>Masticatory Cycle</h3>
+<p>للأسنان الخلفية: <b>Working side</b> = buccal-to-buccal contact، <b>Balancing side</b> = maxillary lingual to mandibular buccal contact.</p>
+</div>
+`
+},
+{
+  navLabel:'Master Table',
+  eyebrow:'مرجع سريع',
+  titleAr:'جدول مقارنة شامل — كل الأسنان الدائمة',
+  titleEn:'Master Comparison Table',
+  html:`
+<div class="topic-block">
+<h3>استخدم الجدول ده وانت بتراجع بسرعة</h3>
+<p>مش هدفنا تحفظ الجدول ده — هدفنا إنك تقدر ترجع له بسرعة وقت المراجعة تتأكد من معلومة أو تقارن بين سنين. لو محتاج تفاصيل كل سن كاملة، ارجع لصفحته في الأقسام اللي فاتت.</p>
+</div>
+
+<div class="topic-block">
+<h3>Anterior Teeth</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>Tooth</th><th>Eruption</th><th>Roots/Canals</th><th>أهم علامة</th></tr>
+<tr><td><b>Max Central</b></td><td>7-8y</td><td>1 root, 1 canal</td><td>Greatest CEJ curvature (3.5mm)</td></tr>
+<tr><td><b>Max Lateral</b></td><td>8-9y</td><td>1 root, 1 canal</td><td>Most variable tooth</td></tr>
+<tr><td><b>Mand Central</b></td><td>6-7y</td><td>1 root, 1 canal</td><td>First permanent tooth to erupt</td></tr>
+<tr><td><b>Mand Lateral</b></td><td>7-8y</td><td>1 root, 1 canal</td><td>Crown tilts distally</td></tr>
+<tr><td><b>Max Canine</b></td><td>11-12y</td><td>1 root (longest)</td><td>Cusp tip mesial to axis</td></tr>
+<tr><td><b>Mand Canine</b></td><td>9-10y</td><td>1 root (may bifurcate)</td><td>Cusp tip on axis</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>Posterior Teeth</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>Tooth</th><th>Eruption</th><th>Roots</th><th>Common canals</th><th>أهم علامة</th></tr>
+<tr><td><b>Max 1st PM</b></td><td>10-11y</td><td>Often 2</td><td>2</td><td>Mesial marginal ridge groove</td></tr>
+<tr><td><b>Max 2nd PM</b></td><td>10-12y</td><td>1</td><td>1</td><td>No groove</td></tr>
+<tr><td><b>Mand 1st PM</b></td><td>10-12y</td><td>1</td><td>1</td><td>Non-functional lingual cusp</td></tr>
+<tr><td><b>Mand 2nd PM</b></td><td>11-12y</td><td>1</td><td>1</td><td>3-cusp (Y) most common</td></tr>
+<tr><td><b>Max 1st Molar</b></td><td>6-7y</td><td>3</td><td>3-4 (MB often 2)</td><td>Tubercle of Carabelli</td></tr>
+<tr><td><b>Max 2nd Molar</b></td><td>12-13y</td><td>3</td><td>3</td><td>No Carabelli</td></tr>
+<tr><td><b>Mand 1st Molar</b></td><td>6-7y</td><td>2</td><td>3-4</td><td>Key of occlusion, 5 cusps</td></tr>
+<tr><td><b>Mand 2nd Molar</b></td><td>11-13y</td><td>2</td><td>3</td><td>4 cusps only</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>أسئلة سريعة تسأل نفسك بيها وانت بتراجع</h3>
+<div class="kp-card"><div class="kp-num">1</div><p>لو شايف سن بـ <b>tubercle of Carabelli</b>، أنهي سن؟ <b>Maxillary 1st Molar</b>.</p></div>
+<div class="kp-card"><div class="kp-num">2</div><p>لو الـ mesiobuccal root فيه 2 canals، أنهي molar أشيع؟ <b>Maxillary 1st Molar (60%)</b>.</p></div>
+<div class="kp-card"><div class="kp-num">3</div><p>سن ملوش mesial marginal ridge groove وله single canal، أنهي premolar؟ <b>The 2nd (maxillary or mandibular)</b>.</p></div>
+<div class="kp-card"><div class="kp-num">4</div><p>سن بيتقابل مع سن واحد بس مش اتنين؟ <b>Mandibular central incisor أو maxillary third molar</b>.</p></div>
+</div>
+`
+}
+  ]
+},
+{
+  id:'biomaterials',
+  icon:'🧪',
+  titleAr:'المواد السنية',
+  navLabel:'Biomaterials',
+  descAr:'الروابط الذرية، الالتصاق، الخواص الفيزيائية والبصرية والميكانيكية، وتصنيف المواد — بنفس أسلوب الفهم والشرح بالعربي.',
+  chipTopics:['Bonding','Adhesion','Physical','Optical','Mechanical','Surface','Time-Dependent','Classes'],
+  topics:[
+{
+  navLabel:'Atomic Bonding',
+  eyebrow:'الأساس الكيميائي',
+  titleAr:'الروابط الذرية وترتيب الذرات',
+  titleEn:'Atomic Bonding & Structural Arrangement',
+  html:`
+<div class="topic-block">
+<h3>ليه أصلاً بندرس الذرة في مادة عن المواد السنية؟</h3>
+<p>لأن كل خاصية هتقابلها بعد كده (الصلابة، التوصيل الحراري، الشفافية) أصلها راجع لنوع الرابطة بين الذرات في المادة دي. الذرة بتحاول توصل لاستقرار عن طريق <b>8 electrons</b> في الغلاف الخارجي — إما بالاستقبال أو الفقد أو المشاركة، وده اللي بيحدد نوع الرابطة.</p>
+</div>
+
+<div class="topic-block">
+<h3>Primary Bonds (قوية، كيميائية، لا رجعة فيها)</h3>
+<p>الروابط الأساسية الثلاثة بتشترك في إنها قوية وثابتة لأنها بتستخدم الـ <b>valence electrons</b> فعلياً:</p>
+<ul>
+<li><b>Ionic Bond:</b> انتقال إلكترون كامل من ذرة لأخرى → جذب كهروستاتيكي بين أيون موجب وسالب (مثال: NaCl). عازل حراري، ومش بيدوب في مذيبات عضوية، لكنه بيدوب في الماء أو الأحماض. كصلب هو عازل كهربائي، لكن في المحلول بيوصل الكهرباء بسهولة. <b>الرابطة الأساسية للـ Glass & Ceramics.</b></li>
+<li><b>Covalent Bond:</b> مشاركة إلكترونات بين ذرتين متجاورتين (مثال: H₂O, CH₄). عازل حراري وكهربائي، ومش بيدوب في الماء. <b>الرابطة الأساسية للـ Polymers</b> زي الـ acrylic resin.</li>
+<li><b>Metallic Bond:</b> الإلكترونات في المعدن مش مرتبطة بذرة معينة، بل بتتحرك بحرية في "سحابة" حوالين كل الذرات. الرابطة دي أضعف من الأيونية والتساهمية، لكنها بتدّي المعدن صفاته المميزة: توصيل كهربائي وحراري عالي (الإلكترونات الحرة بتنقل الشحنة/الحرارة بسهولة)، وعتامة (بتمتص الضوء)، ولمعان (بتعكس جزء منه).</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Secondary Bonds (ضعيفة، فيزيائية، قابلة للعكس)</h3>
+<p>عكس الأساسية تماماً — مش بتستخدم valence electrons فعلياً، وبتعتمد على جذب مؤقت بين الجزيئات:</p>
+<ul>
+<li><b>Hydrogen Bond:</b> أوضح مثال هو الماء — <b>جوه</b> جزيء H₂O الرابطة تساهمية، لكن <b>بين</b> جزيئات الماء المختلفة فيه جذب فيزيائي بسبب عدم توازن الشحنة (dipole) — طرف الجزيء يميل قليلاً للسالب والتاني للموجب.</li>
+<li><b>Van der Waals Forces:</b> في الغازات الخاملة، توزيع الإلكترونات ممكن يتذبذب لحظياً فيدي شحنة مؤقتة على جانب الذرة — وده بيخلق جذب مؤقت بين الجزيئات (مثال: chemisorption of gases في السبائك السائلة).</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Structural Arrangement: Crystalline vs Amorphous</h3>
+<p>أي مادة صلبة بتترتب ذراتها بطريقة من طريقتين:</p>
+<ul>
+<li><b>Crystalline Solids:</b> الذرات مترتبة بانتظام وبتتكرر في الأبعاد التلاتة (<b>long-range order</b>)، وليها <b>نقطة انصهار محددة</b>. أصغر وحدة متكررة اسمها <b>Unit Cell</b>، وفيه <b>14 طريقة</b> ممكنة لترتيب نقاط الشبكة في الفراغ اسمها <b>Bravais Lattices</b>.</li>
+<li><b>Amorphous (Non-crystalline) Solids:</b> الذرات موزعة عشوائياً (<b>short-range order</b> بس)، ومفيش نقطة انصهار محددة — بتلين تدريجياً مع رفع الحرارة (مثال: glass, wax).</li>
+</ul>
+<div class="note-box"><b>Glass Transition Temperature (Tg):</b> هي الدرجة اللي عندها المادة اللا-متبلورة (amorphous) بتبدأ تلين عند التسخين (أو تتصلب عند التبريد) — وبشكل مكافئ، هي الدرجة اللي عندها الـ Coefficient of Thermal Expansion (CTE) بيزيد فجأة. المصطلح ده هيتكرر كتير في المواد الحرارية بعد كده.</div>
+</div>
+`
+},
+{
+  navLabel:'Adhesion',
+  eyebrow:'مبادئ التماسك',
+  titleAr:'مبادئ الالتصاق (Adhesion)',
+  titleEn:'Principles of Adhesion',
+  html:`
+<div class="topic-block">
+<h3>الفرق بين Cohesion و Adhesion</h3>
+<p><b>Cohesion:</b> ترابط مواد <b>متشابهة</b> ببعضها (مثال: قطعتين ذهب بيتلحموا تحت ضغط عن طريق metallic bond). <b>Adhesion:</b> ترابط مواد <b>مختلفة</b> ببعضها — وده اللي بيهمنا في العلاج السني (الحشو مع السن مثلاً).</p>
+<p>3 مصطلحات لازم تفرق بينهم: <b>Adhesive</b> (المادة السائلة/الرقيقة اللي بنحطها لإحداث الالتصاق)، <b>Adherend</b> (السطح الصلب اللي بنحط عليه الـ adhesive)، <b>Adhesive Junction</b> (الطبقة الانتقالية بينهم).</p>
+</div>
+
+<div class="topic-block">
+<h3>نظريات الالتصاق</h3>
+<ul>
+<li><b>Chemical Bond (True Adhesion):</b> رابطة كيميائية حقيقية. مثال كلاسيكي: <b>Glass Ionomer Cement (GIC)</b> و <b>Zinc Polycarboxylate (ZPC)</b> بيلتصقوا بالسن عن طريق مجموعة <b>COOH (carboxyl)</b> اللي بتتفاعل مع الكالسيوم في نسيج السن.</li>
+<li><b>Mechanical Bond:</b> ثبات ميكانيكي مش تفاعل كيميائي حقيقي، وليه نوعين:
+  <ul>
+  <li><b>Macro-mechanical Retention:</b> ظاهرة للعين المجردة (مثال: undercuts، مسامير، براغي).</li>
+  <li><b>Micro-mechanical Retention:</b> مش ظاهرة للعين (مثال: <b>acid etch technique</b> للـ composite resin — حمض الفوسفوريك بيعمل مسام مجهرية في الـ enamel).</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>العوامل المؤثرة على قوة الالتصاق</h3>
+<p>3 مجموعات عوامل:</p>
+<ul>
+<li><b>خاصة بالـ Adherend:</b> الـ surface energy (طاقة السطح)، خشونة السطح، ونظافته.</li>
+<li><b>خاصة بالـ Adhesive:</b> الـ surface tension، الـ viscosity، سُمك الطبقة، ودرجة الـ wetting.</li>
+<li><b>خاصة بالاتنين مع بعض:</b> الإجهاد الحراري (لو الـ CTE مختلف بين الاتنين)، الانكماش وقت التصلب، ونوع الرابطة المتكونة.</li>
+</ul>
+<div class="why-box"><b>ليه Surface Energy مهمة؟</b> ذرات السطح طاقتها أعلى من ذرات العمق، لأنها مش مجذوبة بالتساوي في كل الاتجاهات (على عكس ذرة في نص المادة محاطة بذرات من كل ناحية). الفرق ده هو اللي بيخلي السطح "نشط" وقابل للالتصاق.</div>
+</div>
+
+<div class="topic-block">
+<h3>Wetting والـ Contact Angle</h3>
+<p><b>Wettability</b> = قدرة السائل على الانتشار فوق سطح صلب. <b>Viscosity</b> = مقاومة السائل للانسياب — كل ما قلت الـ viscosity، كل ما كان الانسياب والالتصاق أحسن.</p>
+<div class="note-box"><b>قاعدة زاوية التلامس (Contact Angle θ):</b> θ أقل من 90° = wetting كويس. θ أكبر من 90° = wetting ضعيف. θ = صفر = wetting مثالي. زيادة الـ surface tension بتقلل الـ wetting وبالتالي بتقلل الالتصاق.</div>
+</div>
+
+<div class="topic-block">
+<h3>أنماط الفشل (Modes of Failure)</h3>
+<ul>
+<li><b>Adhesive Failure:</b> الكسر بيحصل عند السطح البيني بين الـ adhesive والـ adherend.</li>
+<li><b>Cohesive Failure:</b> الكسر بيحصل جوه مادة الـ adhesive أو الـ adherend نفسها — ده بيدل على إن الالتصاق كان أقوى من المادة ذاتها.</li>
+<li><b>Mixed Failure:</b> مزيج من النوعين.</li>
+</ul>
+</div>
+`
+},
+{
+  navLabel:'Physical Properties',
+  eyebrow:'خواص المادة',
+  titleAr:'الخواص الفيزيائية',
+  titleEn:'Physical Properties',
+  html:`
+<div class="topic-block">
+<h3>التصنيف العام</h3>
+<p>الخواص الفيزيائية للمواد السنية 3 أنواع: <b>Mass-relating properties</b> (زي الـ Density)، <b>Thermal properties</b> (موضوع الصفحة دي)، و<b>Optical properties</b> (هنشرحها في الصفحة اللي بعدها).</p>
+</div>
+
+<div class="topic-block">
+<h3>Density (الكثافة)</h3>
+<p>Density = الكتلة ÷ الحجم (Mass/Volume). <b>أهميتها الإكلينيكية:</b> القاعدة البلاستيكية غير المعدنية للطقم العلوي كثافتها أقل، وده بيدّيها ثبات (retention) أحسن في فم المريض.</p>
+</div>
+
+<div class="topic-block">
+<h3>الخواص الحرارية (6 خواص)</h3>
+<ul>
+<li><b>A. Melting/Freezing Temperature:</b> درجة الانصهار/التجمد — بتنطبق على المواد <b>Crystalline</b> بس. مهمة لتحديد نوع ماكينة الصهر وقت عمل ترميم معدني غير مباشر.</li>
+<li><b>B. Glass Transition Temperature (Tg):</b> خاصية المواد <b>Non-crystalline</b> (بوليمرات وشمع) — بتلين تدريجياً مع الحرارة بدل نقطة انصهار محددة.</li>
+<li><b>C. Thermal Conductivity:</b> كمية الحرارة (بالكالوري أو الجول) اللي بتعدي في الثانية خلال جسم سمكه 1 سم ومساحة مقطعه 1 سم² لما فرق الحرارة يكون 1 درجة مئوية.</li>
+<li><b>D. Specific Heat:</b> كمية الحرارة المطلوبة لرفع درجة حرارة 1 جرام من المادة درجة مئوية واحدة. المواد اللي specific heat بتاعها منخفض بتسخن بسرعة.</li>
+<li><b>E. Thermal Diffusivity:</b> مقياس لسرعة انتقال الحرارة العابر = Thermal Conductivity ÷ (Specific Heat × Density). المواد اللي diffusivity بتاعتها عالية عندها توصيل عالي و specific heat منخفض.</li>
+<li><b>F. Coefficient of Thermal Expansion (CTE):</b> التغير في الطول لكل وحدة طول عند تغير درجة الحرارة درجة مئوية واحدة.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>التطبيقات الإكلينيكية — ليه نتعلم الأرقام دي أصلاً؟</h3>
+<div class="why-box"><b>Thermal Conductivity العالية:</b> ترميم معدني عميق بتوصيل حراري عالي ممكن يسبب صدمة حرارية للب (thermal pulp shock) — الحل: سمك عاج كافي تحت الترميم، أو لو مستحيل، قاعدة أسمنتية عازلة. بالعكس، في القاعدة المعدنية للطقم، التوصيل العالي ده بقى <b>ميزة</b> لأنه بينشط الدورة الدموية في النسيج الرخو (عكس الأكريليك اللي عازل حراري).</div>
+<div class="note-box"><b>Thermal Diffusivity العالية:</b> الذهب والأملغم عندهم diffusivity عالية، وده بيخليهم عرضة لصدمة حرارية للب.</div>
+<div class="why-box"><b>CTE Mismatch:</b> مادة الحشو لازم يكون الـ CTE بتاعها قريب من نسيج السن عشان منكسرش الإطباق الحدي (marginal seal) ويحصل microleakage. وبالمثل، لازم تطابق الـ CTE بين قاعدة الطقم والأسنان الصناعية عشان منفصلوش عن بعض مع التغيرات الحرارية.</div>
+</div>
+`
+},
+{
+  navLabel:'Optical Properties',
+  eyebrow:'خواص المادة',
+  titleAr:'الخواص البصرية',
+  titleEn:'Optical Properties',
+  html:`
+<div class="topic-block">
+<h3>ليه نهتم بالخواص البصرية؟</h3>
+<p>استعادة لون ومظهر الأسنان الطبيعية هدف أساسي في طب الأسنان الترميمي — الترميم اللي شكله مثالي بس لونه مختلف عن باقي الأسنان هيبان فوراً.</p>
+</div>
+
+<div class="topic-block">
+<h3>3 عناصر اللون: Hue, Value, Chroma</h3>
+<ul>
+<li><b>Hue:</b> الطول الموجي السائد للضوء (مثال: أحمر، أزرق، أخضر).</li>
+<li><b>Value:</b> درجة الفتوح أو الغمق (اللون الأفتح قيمته أعلى). في طب الأسنان، ده <b>أهم عنصر لوني</b> لأنه بيمثل حيوية السن — السن الميت (non-vital) قيمته منخفضة وبيبان رمادي.</li>
+<li><b>Chroma:</b> درجة تشبع (كثافة) اللون.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>عوامل تؤثر على مطابقة اللون</h3>
+<ul>
+<li><b>Surface Finish:</b> السطح الخشن جداً بيبان أفتح وأقل تشبعاً من نفس المادة بسطح أملس، لأن السطح الخشن بيعكس ضوء أبيض أكتر بيمتزج مع الضوء المنعكس من المادة ويخفف لونها. ده شائع في الترميمات غير المصقولة أو المستهلكة.</li>
+<li><b>Pigmentation:</b> إضافة أصباغ (أكاسيد معدنية) للمواد زي الـ composite resin وأكريليك الأطقم لإنتاج تأثيرات جمالية.</li>
+<li><b>Metamerism:</b> ظاهرة إن الألوان بتتطابق تحت مصدر ضوء معين لكن تختلف تحت مصدر تاني.</li>
+<li><b>Fluorescence (Phosphorescence):</b> قدرة المادة على امتصاص ضوء بطول موجي معين وإعادة إصداره بطول موجي مختلف (أطول عادة).</li>
+</ul>
+<div class="why-box"><b>أهمية Metamerism إكلينيكياً:</b> مطابقة اللون لازم تتم تحت مصدرين للضوء على الأقل، واحد منهم ضوء الشمس أو ضوء أبيض.</div>
+</div>
+
+<div class="topic-block">
+<h3>Fluorescence في الأسنان الطبيعية</h3>
+<p>الأسنان الطبيعية بتصدر فلورة مرئية بلون أزرق-أبيض (400-450 nm) لما تتعرض لأشعة فوق بنفسجية (UV) أو قريبة منها (300-400 nm).</p>
+<ul>
+<li>الفلورة بتساهم في المظهر الحيوي للسن.</li>
+<li>الترميمات اللي مفيهاش مادة فلورة بتبان "أسنان مفقودة" تحت الضوء الأسود (UV).</li>
+<li>خزف الأسنان (porcelain) بيتصنع بمواد فلورة زي <b>Cerium Oxide</b>، لكن الأكريليك مفيهوش.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Opacity, Translucency & Transparency</h3>
+<ul>
+<li><b>Opacity:</b> بتمنع مرور الضوء تماماً — منقدرش نشوف من خلالها.</li>
+<li><b>Translucency:</b> بتسمح بمرور جزء من الضوء وتشتت الباقي — منقدرش نشوف بوضوح من خلالها (مثال: enamel، الخزف السني).</li>
+<li><b>Transparency:</b> بتسمح بمرور الضوء من غير تشويه — نقدر نشوف بوضوح من خلالها (مثال: الزجاج).</li>
+</ul>
+<div class="note-box"><b>Opalescence:</b> المواد اللي عندها الخاصية دي (زي مينا الأسنان) بتعكس الأطوال الموجية الأقصر (الأزرق) أكتر، وبتنقل الأطوال الأطول (الأصفر-الأحمر) أكتر. عشان نطلع بترميم جمالي عالي المستوى (زي القشرة الخزفية/veneers)، لازم نستخدم مواد بخاصية الـ opalescence دي.</div>
+</div>
+
+<div class="topic-block">
+<h3>مطابقة اللون في العيادة</h3>
+<p>أشهر طريقة هي <b>Shade Guide</b> — مجموعة شرائح بقيم مختلفة من Hue و Value و Chroma. بتترتب إما حسب الـ <b>Hue</b> (زي VITA Classic) أو حسب الـ <b>Chroma</b> (زي VITA Pan 3D Master). <b>عيبها:</b> إدراك اللون بيختلف من شخص للتاني.</p>
+</div>
+`
+},
+{
+  navLabel:'Mechanical Properties',
+  eyebrow:'خواص المادة',
+  titleAr:'الخواص الميكانيكية',
+  titleEn:'Mechanical Properties',
+  html:`
+<div class="topic-block">
+<h3>Stress و Strain — الأساس اللي هيتبني عليه كل حاجة</h3>
+<p><b>Stress (σ):</b> رد الفعل الداخلي لقوة خارجية = Force ÷ Area (وحدتها Pascal, N/m²). <b>Strain (ε):</b> التغير في الطول لكل وحدة طول (ΔL/L) — بلا وحدة قياس.</p>
+<p>لما نرسم العلاقة بينهم بنطلع بمنحنى Stress-Strain اللي بيتقاس بجهاز اسمه Universal Testing Machine — والمنحنى ده هو اللي هيفسرلنا كل الخواص الجاية.</p>
+</div>
+
+<div class="topic-block">
+<h3>Elastic vs Plastic Deformation</h3>
+<ul>
+<li><b>Elastic Deformation:</b> <b>قابلة للعكس</b> — المادة بترجع لأبعادها الأصلية لما نشيل الإجهاد. سببها تمدد الروابط الذرية بس من غير كسرها.</li>
+<li><b>Plastic Deformation:</b> <b>غير قابلة للعكس</b> — المادة مش بترجع لشكلها الأصلي. سببها كسر الروابط الذرية وإعادة ترتيبها.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>النقاط المهمة على منحنى Stress-Strain</h3>
+<ul>
+<li><b>PL (Proportional/Elastic Limit):</b> أقصى إجهاد من غير تشوه دائم — نهاية الجزء المستقيم (الخطي) من المنحنى.</li>
+<li><b>YS (Yield Stress):</b> الإجهاد اللي عنده المادة تبدأ تتصرف بشكل بلاستيكي.</li>
+<li><b>US (Ultimate Strength):</b> أقصى إجهاد تقدر المادة تتحمله قبل الكسر.</li>
+<li><b>FS (Fracture Strength):</b> الإجهاد الفعلي وقت حدوث الكسر.</li>
+<li><b>E (Elastic Modulus):</b> = Stress/Strain = ميل الجزء الخطي من المنحنى. بيقيس الصلابة/الجساوة (stiffness) — الـ E العالي معناه سلك تقويم صلب بيدّي قوة عالية وسريعة.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Flexibility, Ductility, Malleability, Brittleness</h3>
+<ul>
+<li><b>Flexibility:</b> أقصى انفعال مرن (elastic strain) عند نقطة الـ PL. الـ flexibility العالية = تشوه مرن كبير بإجهاد قليل — مهمة في مواد الطبعة (impression materials) عشان تقدر "تفلت" من الـ undercuts من غير تشوه دائم.</li>
+<li><b>Ductility:</b> القدرة على التشوه البلاستيكي تحت <b>Tension (شد)</b> من غير كسر (يعني تقدر تتحول لسلك).</li>
+<li><b>Malleability:</b> القدرة على التشوه البلاستيكي تحت <b>Compression (ضغط)</b> من غير كسر (يعني تقدر تتحول لصفائح رفيعة بالطرق).</li>
+<li><b>Brittleness:</b> عدم القدرة على إظهار أي تشوه بلاستيكي — الكسر بيحصل عند أو قريب من نقطة الـ PL مباشرة (عكس الـ Ductility تماماً).</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Resilience vs Toughness — أشهر نقطة بيتلخبط فيها الطلاب</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th></th><th>Resilience</th><th>Toughness</th></tr>
+<tr><td><b>بتقيس</b></td><td>مقاومة التشوه الدائم</td><td>مقاومة الكسر</td></tr>
+<tr><td><b>المساحة تحت المنحنى</b></td><td>الجزء المرن (Elastic) بس</td><td>المنحنى كله</td></tr>
+<tr><td><b>يعتمد على</b></td><td>PL بس</td><td>PL عالي + ductility كويسة</td></tr>
+</table></div>
+<div class="why-box"><b>تطبيق عملي:</b> إضافة zirconia أو alumina أو leucite كحشوات للخزف (porcelain) بتزود الـ fracture toughness بتاعه عن طريق مقاومة انتشار الشروخ (crack propagation).</div>
+</div>
+
+<div class="topic-block">
+<h3>اختبارات القوة الميكانيكية التانية</h3>
+<ul>
+<li><b>Compressive Strength:</b> أقصى إجهاد تحت قوة ضغط قبل الفشل — بيتقاس بضغط أسطوانة بين لوحين مسطحين.</li>
+<li><b>Diametral Tensile Strength (Brazilian Test):</b> اختبار شد غير مباشر <b>للمواد الهشة بس</b> — قرص بيتضغط قطرياً فيتولد شد داخلي من الضغط الخارجي.</li>
+<li><b>Shear Strength:</b> بيدرس قوة السطح البيني، زي رابطة الخزف بالمعدن (porcelain-metal bond).</li>
+<li><b>Flexural/Transverse Strength (Modulus of Rupture):</b> اختبار الانحناء بثلاث نقاط — قضيب مثبت من طرفيه والحمل بيتطبق في النص.</li>
+<li><b>Impact Strength:</b> الطاقة المطلوبة للكسر تحت صدمة مفاجئة — بيتقاس باختبار Charpy (دعم أفقي) أو Izod (دعم رأسي). مهمة جداً للأطقم اللي ممكن تقع فجأة.</li>
+<li><b>Tear Strength:</b> مقاومة التمزق — تعتمد على سرعة التحميل (التحميل السريع بيزود الـ tear strength). مهمة لمواد الطبعة المرنة والأجزاء الرقيقة.</li>
+<li><b>Burnishability:</b> القدرة على تشكيل حواف الترميم المصبوب تحت الضغط — بتعتمد على الـ ductility والـ malleability.</li>
+</ul>
+<div class="note-box"><b>Tear Strength تطبيق عملي:</b> لأنها rate-dependent، طبعات الـ alginate لازم تتشال بحركة سريعة ومفاجئة (snap) عشان نزود مقاومة التمزق ونتجنب تمزق الأجزاء الرقيقة.</div>
+</div>
+`
+},
+{
+  navLabel:'Surface Properties',
+  eyebrow:'خواص المادة',
+  titleAr:'الخواص الميكانيكية السطحية',
+  titleEn:'Surface Mechanical Properties',
+  html:`
+<div class="topic-block">
+<h3>3 خواص سطحية أساسية</h3>
+<ul>
+<li><b>Surface Hardness:</b> مقاومة الخدش والاختراق.</li>
+<li><b>Friction:</b> مقاومة الحركة بين سطحين.</li>
+<li><b>Wear:</b> فقدان ميكانيكي لمادة السطح بسبب التلامس.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Surface Hardness</h3>
+<p><b>التعريف:</b> مقاومة سطح المادة للخدش أو الاختراق أو الانغراس بواسطة جسم صلب.</p>
+<div class="why-box"><b>ليه الصلابة مهمة؟</b> بتدل على سهولة التشطيب والتلميع (finishing & polishing). الصلابة المنخفضة تعني السطح بيتخدش بسهولة، والخدوش دي بتعمل كـ <b>stress raisers</b> بترفع من احتمال الفشل قبل الأوان، وكمان بتخلي السطح خشن يستقطب البقع وميكروبات البلاك.</div>
+<p><b>مبدأ اختبارات الصلابة:</b> بتعتمد على اختراق أداة (indenter) للسطح تحت حمل محدد — وأبعاد الأثر الناتج (indentation) بتحدد الصلابة. القاعدة: <b>كل ما كانت المادة أصلب، كل ما كان الأثر أصغر</b> (علاقة عكسية).</p>
+</div>
+
+<div class="topic-block">
+<h3>اختبارات قياس الصلابة</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>الاختبار</th><th>يُستخدم لـ</th></tr>
+<tr><td><b>Brinell</b></td><td>المواد المطاوعة (المعادن)</td></tr>
+<tr><td><b>Rockwell</b></td><td>المواد البلاستيكية (البوليمرات)</td></tr>
+<tr><td><b>Vicker's</b></td><td>اختبار عام (universal)</td></tr>
+<tr><td><b>Knoop</b></td><td>اختبار عام (universal)</td></tr>
+<tr><td><b>Shore A</b></td><td>المواد المطاطية (elastomers)</td></tr>
+<tr><td><b>Barcol</b></td><td>قياس عمق تصلب الـ resin composite</td></tr>
+<tr><td><b>Nano-indentation</b></td><td>خواص الأطوار المجهرية (زي الـ micro-filled composite)</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>Friction</h3>
+<p><b>التعريف:</b> مقاومة الحركة بين جسمين ماديين — بتحصل لأن سطحي الجسمين بيتلامسوا وجزيئاتهم بتلتصق ببعض.</p>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>الحالة الإكلينيكية</th><th>الأثر</th><th>مفيدة ولا لأ؟</th></tr>
+<tr><td>تخشين سطح زرعة الأسنان (implant)</td><td>زيادة الـ friction بين الزرعة والعظم</td><td>✅ ميزة — بتقلل الحركة وتحسن الـ osseointegration</td></tr>
+<tr><td>سلك التقويم مع البراكيت</td><td>الـ friction بتقلل حركة السن</td><td>❌ عيب — بتبطئ حركة تصحيح السن</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>Wear</h3>
+<p><b>التعريف:</b> الفقد الميكانيكي لمادة السطح نتيجة التلامس بين مادتين أو أكتر. الـ Wear دايماً بيظهر على سطح <b>المادة الأضعف</b>.</p>
+<p><b>أمثلة:</b> المضغ الطبيعي بيسبب <b>Attrition</b> (فسيولوجي/طبيعي)، الـ Bruxism (طحن الأسنان اللاإرادي) بيسبب wear مرضي، والتنظيف الخاطئ بالفرشاة والمعجون بيسبب <b>Abrasive Wear</b>.</p>
+</div>
+
+<div class="topic-block">
+<h3>4 أنواع الـ Wear بالتفصيل</h3>
+<ul>
+<li><b>1. Abrasive Wear:</b> مادة أصلب بتقطع أو تحفر في مادة أضعف. نوعين: <b>Two-body wear</b> (تلامس مباشر بين سطحين، زي تلامس سن بسن) و<b>Three-body wear</b> (جسيمات بتتحرك بين السطحين، زي جزيئات الطعام أو المعجون).</li>
+<li><b>2. Corrosive Wear:</b> ناتج عن تفاعل البيئة (جو، رطوبة، بكتيريا، أحماض) مع الأسطح المتحركة — الـ wear بيتسارع بسبب الـ corrosion.</li>
+<li><b>3. Adhesive Wear:</b> مادة بتنزلق على التانية مع تفاعل والتحام (adhesion) في نقاط تلامس موضعية، وجزيئات مجهرية بتتنقل من جسم للتاني.</li>
+<li><b>4. Surface Fatigue Wear:</b> نتوءات صغيرة بمساحة تلامس ضئيلة بتولد إجهاد موضعي عالي جداً → شروخ سطحية وتحت سطحية بتنكسر تحت التحميل المتكرر.</li>
+</ul>
+<div class="note-box"><b>عوامل بتأثّر على الـ Wear:</b> طبيعة الأسطح المتلامسة، صلابة السطح (الأضعف أكتر عرضة)، درجة التلامس المجهري، وجود مادة تشحيم زي اللعاب (بتقلل الـ wear)، وزيادة الضغط أو السرعة أو زمن الحركة (بتزود الـ wear).</div>
+</div>
+`
+},
+{
+  navLabel:'Time-Dependent',
+  eyebrow:'خواص المادة',
+  titleAr:'الخواص المعتمدة على الزمن (Rheological)',
+  titleEn:'Time-Dependent (Rheological) Properties',
+  html:`
+<div class="topic-block">
+<h3>5 خواص هتقابلها هنا</h3>
+<p>Viscosity، Viscoelasticity، Creep، Stress Relaxation، Fatigue — كل واحدة فيهم بتوصف إزاي المادة بتتصرف <b>مع مرور الوقت</b> تحت تأثير قوة، مش مجرد استجابة لحظية زي المرونة العادية.</p>
+</div>
+
+<div class="topic-block">
+<h3>1. Flow & Viscosity</h3>
+<p><b>Flow:</b> انتشار المادة فوق سطح تحت ضغط أو بوزنها الذاتي. <b>Viscosity (η):</b> مقاومة السائل للانسياب = Shear Stress ÷ Strain Rate (Flow Rate).</p>
+<div class="why-box"><b>التطبيق الإكلينيكي:</b> مواد الطبعة (impression materials) لازم يكون عندها flow كافي لتسجيل التفاصيل الدقيقة في الفم. اختيار الـ viscosity بيعتمد على الاستخدام: <b>Cementation</b> ← viscosity منخفضة (flow عالي)، <b>Filling</b> ← viscosity عالية. كمان الـ viscosity بتُستخدم لقياس <b>working time</b> للمواد اللي بتتحول من سائل لصلب.</div>
+</div>
+
+<div class="topic-block">
+<h3>العوامل المؤثرة على الـ Viscosity</h3>
+<ul>
+<li><b>الضغط:</b> زيادة الضغط بتزود الـ flow (يعني بتقلل η).</li>
+<li><b>الزمن:</b> السوائل غير المتصلبة (زي الماء) — الـ viscosity ثابتة بالوقت. المواد المتصلبة (معظم المواد السنية بعد الخلط) — الـ viscosity بتزيد مع مرور الوقت.</li>
+<li><b>درجة الحرارة:</b> المواد غير المتصلبة — الـ viscosity بتقل مع رفع الحرارة. المواد المتصلبة — الـ viscosity بتزيد مع رفع الحرارة (لأن سرعة التفاعل بتزيد).</li>
+</ul>
+<div class="note-box">تقنية <b>Cooled Glass Slab</b> بتُستخدم لبعض الأسمنتات ومواد الطبعة اللي بتتصلب كيميائياً، عشان نطول الـ working time.</div>
+</div>
+
+<div class="topic-block">
+<h3>4 أنواع السوائل حسب معدل القص (Shear Rate)</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>النوع</th><th>السلوك</th><th>مثال</th></tr>
+<tr><td><b>A. Newtonian</b></td><td>Viscosity ثابتة، علاقة خطية مع الـ shear rate</td><td>الماء</td></tr>
+<tr><td><b>B. Pseudoplastic</b></td><td>Shear Thinning: كل ما زاد الـ shear rate، قلت الـ viscosity</td><td>جل الفلورايد، طبعات المطاط أحادية الطور</td></tr>
+<tr><td><b>C. Dilatant</b></td><td>Shear Thickening: كل ما زاد الـ shear rate، زادت الـ viscosity</td><td>راتنجات قاعدة الطقم السائلة</td></tr>
+<tr><td><b>D. Plastic</b></td><td>صلبة لحد ما توصل لإجهاد الخضوع، وبعدها تنساب بـ viscosity ثابتة</td><td>الكاتشب</td></tr>
+</table></div>
+<div class="note-box"><b>Thixotropic material:</b> مادة pseudoplastic بتفقد الـ viscosity تحت الضغط المتكرر وترجعها وقت الراحة — بسبب انهيار وإعادة تكوّن بنيتها الداخلية. مثال تطبيقي: طبعة المطاط أحادية الطور — في الملعقة viscosity عالية (بتفضل ثابتة ومش بتسيح)، لكن مع ضغط السرنجة بتقل الـ viscosity وتنساب بسهولة حوالين الأسنان.</div>
+</div>
+
+<div class="topic-block">
+<h3>2. Viscoelasticity</h3>
+<p>ظاهرة إظهار المادة لخواص مرنة ولزجة (elastic + viscous) في نفس الوقت. عشان نفهمها، نقارن 3 نماذج:</p>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>النموذج</th><th>عند التحميل</th><th>عند إزالة التحميل</th></tr>
+<tr><td><b>Ideal Elastic (نابض)</b></td><td>تشوه فوري ومفاجئ</td><td>استرداد فوري وكامل — بلا اعتماد على معدل الانفعال</td></tr>
+<tr><td><b>Ideal Viscous (Dashpot)</b></td><td>تشوه تدريجي مستمر</td><td>مفيش استرداد — تشوه دائم يفضل — يعتمد على معدل الانفعال</td></tr>
+<tr><td><b>Viscoelastic (المواد الحقيقية)</b></td><td>تشوه فوري + تشوه تدريجي غير خطي بمرور الوقت</td><td>استرداد فوري + استرداد بطيء متأخر + تشوه دائم متبقي</td></tr>
+</table></div>
+<div class="why-box"><b>الأهمية الإكلينيكية:</b> إزالة مواد الطبعة بحركة سريعة (snap removal) بتقلل زمن تطبيق الحمل، وبالتالي تقلل التشوه الدائم وتحسّن دقة الطبعة. وكمان لازم ننتظر وقت كافي قبل صب الموديل عشان مادة الطبعة اللزجة-مرنة تسترد أبعادها الدقيقة بالكامل.</div>
+</div>
+
+<div class="topic-block">
+<h3>3. Creep</h3>
+<p><b>Creep:</b> انفعال بلاستيكي معتمد على الزمن في مادة معرضة لإجهاد <b>ثابت أقل من إجهاد الخضوع (yield strength)</b>.</p>
+<div class="note-box">معظم المعادن والسبائك <b>ملهاش</b> creep في درجة حرارة الفم (بسبب نقطة انصهارها العالية) — <b>الأملغم هو الاستثناء الوحيد</b>.</div>
+</div>
+
+<div class="topic-block">
+<h3>4. Stress Relaxation</h3>
+<p><b>Stress Relaxation:</b> انخفاض الإجهاد في مادة معرضة لانفعال <b>ثابت</b> بمرور الوقت (عكس الـ Creep تماماً — هنا الانفعال ثابت والإجهاد هو اللي بيتغير).</p>
+<div class="why-box"><b>مثال تطبيقي (التقويم):</b> الرباط المطاطي (latex band) بيحافظ على قوته لفترة أطول (انخفاض بطيء في الإجهاد)، بعكس الرباط البلاستيكي اللي إجهاده بينخفض بسرعة — عشان كده الـ latex بيتفضل في كتير من التطبيقات التقويمية.</div>
+</div>
+
+<div class="topic-block">
+<h3>5. Fatigue</h3>
+<p><b>Fatigue:</b> كسر تدريجي تحت تحميل دوري متكرر (مش حمل زائد لمرة واحدة).</p>
+<div class="why-box"><b>S-N Curve:</b> كل ما زاد الإجهاد، قل عدد الدورات اللازمة للكسر، والعكس صحيح. <b>Endurance Limit</b> = أقصى إجهاد تقدر المادة تتحمله لعدد لا نهائي من الدورات من غير ما تنكسر. الترميمات لازم تُصمم بحيث تفضل إجهادات المضغ عليها أقل من الـ Endurance Limit، لمنع الكسر التراكمي بالتعب.</div>
+</div>
+`
+},
+{
+  navLabel:'Material Failure',
+  eyebrow:'خواص المادة',
+  titleAr:'فشل المواد السنية',
+  titleEn:'Failure of Dental Materials',
+  html:`
+<div class="topic-block">
+<h3>إيه معنى "فشل" المادة؟</h3>
+<p>المادة "تفشل" لما تبقى غير قادرة على أداء الوظيفة اللي اتصممت لأجلها. أسباب الفشل جوه الفم: تنوع الإجهادات، التغير المستمر في الـ pH، الجو الدافئ والرطب، تغيرات الحرارة من سخن لبرد والعكس، ووجود الميكروبات. الفشل بيحصل بـ5 طرق أساسية: <b>Fracture, Tarnish & Corrosion, Crazing, Wear, Fatigue</b> (الأخيرين اتشرحوا في صفحات تانية).</p>
+</div>
+
+<div class="topic-block">
+<h3>1. Fracture</h3>
+<p>بيحصل لما الإجهاد يتخطى الـ Ultimate Strength للمادة، وله نوعين:</p>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th></th><th>Brittle Fracture</th><th>Ductile Fracture</th></tr>
+<tr><td><b>تشوه قبل الكسر</b></td><td>مفيش تشوه بلاستيكي</td><td>يحصل تشوه بلاستيكي قبل التمزق</td></tr>
+<tr><td><b>سرعة انتشار الشرخ</b></td><td>سريعة</td><td>بطيئة</td></tr>
+<tr><td><b>الطاقة الممتصة</b></td><td>قليلة</td><td>كبيرة</td></tr>
+<tr><td><b>أمثلة</b></td><td>الخزف والزجاج (ceramics & glasses)</td><td>المعادن والبوليمرات</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>2. Tarnish & Corrosion</h3>
+<p><b>Tarnish:</b> تغير لون سطح المعدن، أو فقدان بسيط للمعان السطح. <b>Corrosion:</b> تلف فعلي في بنية سطح وتحت سطح المعدن نتيجة التفاعل مع البيئة المحيطة.</p>
+<p><b>أسباب الـ Tarnish:</b> طبقات سطحية رقيقة (أكاسيد، كبريتيدات، كلوريدات)، بكتيريا منتجة للصبغات، أدوية مسببة للبقع (زي الحديد)، وبقايا الطعام والبلاك والجير على سطح الترميم.</p>
+</div>
+
+<div class="topic-block">
+<h3>نوعان من الـ Corrosion</h3>
+<ul>
+<li><b>Chemical Corrosion (Dry):</b> اتحاد مباشر للمعدن مع عناصر غير معدنية (أكسدة، هلجنة، كبرتة) — مثال: الكبريت (من البيض) + الفضة (في الأملغم) → كبريتيد الفضة. الحل: تخزين مسحوق الأملغم بارد وجاف لمنع الأكسدة.</li>
+<li><b>Electrochemical Corrosion (Wet):</b> محتاجة <b>electrolyte</b> (سائل/ماء) ومسار لانتقال الإلكترونات. الأكسدة (عند الأنود) لازم تتوازن مع الاختزال (عند الكاثود).</li>
+</ul>
+<div class="note-box"><b>مكونات الخلية الكهروكيميائية:</b> <b>Anode</b> (جهد كهربي أقل، الأكسدة بتحصل هنا، بيفقد إلكترونات حرة، بيفقد كتلة) — <b>Cathode</b> (جهد أعلى، الاختزال بيحصل هنا، بياخد إلكترونات، بيكسب كتلة) — <b>Electrolyte</b> (بيوفر الأيونات الموجبة اللازمة للكاثود) — <b>Electric Current</b> (مسار التوصيل من الأنود للكاثود).</div>
+</div>
+
+<div class="topic-block">
+<h3>3 أنواع للـ Electrochemical Corrosion</h3>
+<ul>
+<li><b>Galvanic Corrosion:</b> (أ) معادن مختلفة بجهود كهربية مختلفة في تلامس — مثال: الأملغم (أنود) مقابل الذهب (كاثود) واللعاب هو الـ electrolyte. (ب) تركيب غير متجانس — مثال: الأطوار γ1/γ2 في الأملغم المتصلد.</li>
+<li><b>Concentration Cell Corrosion:</b> بسبب اختلاف تركيز الأكسجين — مثال: بقايا طعام في المناطق البينية (أكسجين قليل، بتبقى أنود) مقابل السطح الطاحن (أكسجين أكتر، بيبقى كاثود). الحفر السطحية بتساهم في المشكلة دي.</li>
+<li><b>Stress Cell Corrosion:</b> المناطق المجهدة في الترميم بتتصرف كأنود، وغير المجهدة كاثود — مثال: مشابك الأطقم الجزئية بعد التعديل البارد (cold-worked)، أو تلميع حواف التاج.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>آثار الـ Corrosion والحماية منها</h3>
+<p><b>الآثار:</b> إضعاف الترميم وإفساد المظهر الجمالي، خشونة السطح (تستقطب البكتيريا/البلاك وتسبب رائحة كريهة)، طعم معدني (وسمية محتملة)، ألم موضعي وتورم بلا وجود عدوى، وهجرة أيونات معدنية لأعضاء تانية بالجسم قد تسبب التهاب.</p>
+<p><b>الحماية:</b></p>
+<ul>
+<li><b>Passivation:</b> طبقة أكسيد سطحية مستقرة بتمنع أكسدة زيادة — أفضلها في الألومنيوم والكروم والتيتانيوم.</li>
+<li>سبائك الأسنان لازم تحتوي على <b>≥ 70-75% معادن نبيلة (noble metals)</b>.</li>
+<li>الحفاظ على نظافة الفم.</li>
+<li>تلميع السبائك المستخدمة داخل الفم بشكل عالي (سطح أملس ولامع بيتغلب على corrosion الخلية التركيزية).</li>
+<li>تجنب الترميمات المعدنية المختلفة في نفس الفم؛ لو مفيش مفر، بندهن الكاثود بطبقة فرنيش عازلة.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>3. Crazing</h3>
+<p><b>Crazing:</b> شروخ سطحية دقيقة ناتجة عن إجهادات شد (tensile stresses) بتفصل سلاسل البوليمر عن بعض — بتضعف الطقم. غالباً بتحصل في طبقة الراتنج الرقيقة المحيطة بالأسنان الصناعية.</p>
+<p><b>أسبابها:</b> دورات تكرار الجفاف والترطيب (انكماش وتمدد متبادل)، عدم تطابق الـ CTE بين قاعدة الطقم الأكريليكية والأسنان الخزفية، والمذيبات (كحول، أسيتون، كلوروفورم، مونومر) — مثال: تلامس المونومر أثناء إصلاح الطقم.</p>
+<div class="note-box">راتنجات قاعدة الطقم <b>المتشابكة (cross-linked)</b> أقل عرضة للـ crazing.</div>
+</div>
+`
+},
+{
+  navLabel:'Classes of Biomaterials',
+  eyebrow:'التصنيف الشامل',
+  titleAr:'التصنيفات العامة للمواد السنية',
+  titleEn:'General Classes of Biomaterials',
+  html:`
+<div class="topic-block">
+<h3>4 فئات أساسية</h3>
+<p>المواد السنية بتتصنف بشكل عام لـ 4 فئات: <b>Metals</b> (مثال: Amalgam, Alloys)، <b>Polymers</b> (مثال: PMMA, Silicones)، <b>Ceramics</b> (مثال: تيجان الخزف)، و<b>Composites</b> (دمج فئتين أو أكتر مع بعض).</p>
+</div>
+
+<div class="topic-block">
+<h3>1. Metals</h3>
+<p><b>خواص المعادن:</b> في درجة حرارة الغرفة، كل المعادن هي <b>crystalline solids</b> ما عدا <b>الزئبق (Mercury) والجاليوم (Gallium)</b> اللي بيكونوا سائلين. توصيل حراري وكهربائي كويس (بسبب الإلكترونات الحرة)، عاتمة ولامعة، صلابة ونقطة انصهار عالية (بسبب الرابطة المعدنية القوية)، وليونة وقابلية للطرق كويسة (بسبب عيوب التبلور اللي بتسمح للبلورات تنزلق فوق بعض). لونها أبيض بشكل عام، ما عدا <b>النحاس (لونه محمر) والذهب (لونه أصفر)</b>.</p>
+</div>
+
+<div class="topic-block">
+<h3>طرق تشكيل المعادن</h3>
+<ul>
+<li><b>Casting:</b> صهر المعدن/السبيكة وتشكيله في قالب بالشكل المطلوب.</li>
+<li><b>Cold Working:</b> تشكيل معدن مصبوب متصلد عن طريق التشغيل الميكانيكي (قضبان، أسلاك، أنابيب). الإجهاد المطبق <b>أعلى من إجهاد الخضوع (yield strength)</b>.</li>
+<li><b>Powder Metallurgy (Sintering):</b> ربط جسيمات مسحوق صلبة بالحرارة والضغط <b>من غير وجود أي سائل</b>.</li>
+<li><b>Amalgamation:</b> خلط معدن سائل مع سبيكة مسحوقة. أملغم الأسنان = زئبق + فضة + قصدير + نحاس ← حشو مباشر قوي وصلب ومتين.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Alloys — ليه بنحتاج سبائك مش معادن نقية؟</h3>
+<p>المعادن النقية عادة <b>طرية جداً ومطاوعة زيادة</b> للاستخدام السني، فبنحسّن خواصها الميكانيكية بخلطها مع معادن تانية = <b>Alloy</b> (مزيج يحتوي على معدنين أو أكتر).</p>
+</div>
+
+<div class="topic-block">
+<h3>تصنيف السبائك حسب عدد العناصر</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>النوع</th><th>عدد المعادن</th></tr>
+<tr><td><b>Binary</b></td><td>2</td></tr>
+<tr><td><b>Ternary</b></td><td>3</td></tr>
+<tr><td><b>Quaternary</b></td><td>4</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>تصنيف السبائك حسب درجة الذوبان (Solubility)</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th></th><th>Solid Solution</th><th>Eutectic Alloy</th><th>Intermetallic Compound</th></tr>
+<tr><td><b>الذوبان</b></td><td>ذوبان كامل</td><td>ذوبان جزئي</td><td>غير قابل للذوبان تماماً</td></tr>
+<tr><td><b>التركيب</b></td><td>متجانس (Homogeneous)</td><td>غير متجانس (Heterogeneous)</td><td>غير متجانس</td></tr>
+<tr><td><b>الانصهار</b></td><td>مدى (range) مش نقطة واحدة</td><td>نقطة انصهار ثابتة</td><td>—</td></tr>
+<tr><td><b>الصلابة</b></td><td>منخفضة</td><td>عالية</td><td>عالية جداً</td></tr>
+<tr><td><b>مقاومة التآكل</b></td><td>عالية</td><td>منخفضة</td><td>هش جداً (very brittle)</td></tr>
+<tr><td><b>مثال</b></td><td>الذهب-النحاس</td><td>الرصاص-القصدير / الفضة-النحاس</td><td>—</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>نوعان من الـ Solid Solution</h3>
+<ul>
+<li><b>A. Substitutional:</b> نوعان مختلفان من الذرات موزعين بالتبادل في نفس الشبكة البلورية. الشروط: فرق الحجم الذري أقل من <b>15%</b>، نفس نوع الشبكة البلورية، ومفيش تفاعل بين المعدنين. مثال: الذهب-النحاس.</li>
+<li><b>B. Interstitial:</b> ذرات معدن (أصغر بكتير) بتشغل الفراغات البينية بين ذرات المعدن الأكبر — بيحصل لما يكون فرق الحجم الذري كبير. مثال: الحديد-الكربون (الصلب/Steel).</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>خواص Solid Solution مقابل Eutectic Alloy</h3>
+<p><b>Solid Solution:</b> عندها مدى انصهار (مش نقطة واحدة)، متجانسة فبتقاوم الـ tarnish والـ corrosion كويس، وعندها ليونة (ductility) عالية لكن قوة وصلابة منخفضة نسبياً.</p>
+<p><b>Eutectic Alloy:</b> عندها نقطة انصهار ثابتة، غير متجانسة فمقاومتها للـ tarnish والـ corrosion منخفضة، وهي هشة (brittle) لكن قوتها وصلابتها عالية.</p>
+</div>
+
+<div class="topic-block">
+<h3>2. Polymers</h3>
+<p><b>Polymer:</b> سلاسل جزيئية طويلة مكونة من وحدات صغيرة متكررة (monomers). Poly = كتير، Mer = وحدة مونومر. مثال: <b>PMMA (Poly Methyl Methacrylate)</b>. <b>Monomer:</b> أصغر وحدة متكررة في سلسلة البوليمر. <b>Homopolymer:</b> بوليمر مكوّن من نوع واحد من المونومر. <b>Copolymer:</b> بوليمر مكوّن من نوعين أو أكتر من المونومرات.</p>
+</div>
+
+<div class="topic-block">
+<h3>تصنيف البوليمرات حسب التركيب المكاني</h3>
+<ul>
+<li><b>A. Linear:</b> سلاسل مستقيمة منفصلة ومتمايزة.</li>
+<li><b>B. Branched:</b> سلاسل منفصلة بها تفرعات جانبية.</li>
+<li><b>C. Cross-linked:</b> تركيب شبكي — ممكن يبقى جزيء عملاق واحد. أقوى وأصلب وأكتر جساوة، وبتلين في درجات حرارة أعلى، ومش بتمتص السوائل بسهولة زي الأنواع التانية.</li>
+</ul>
+</div>
+
+<div class="topic-block">
+<h3>Thermoplastic vs Thermosetting</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th></th><th>Thermoplastic</th><th>Thermosetting</th></tr>
+<tr><td><b>التركيب</b></td><td>خطي أو متفرع</td><td>متشابك (cross-linked)</td></tr>
+<tr><td><b>عند التسخين</b></td><td>يلين ← يتشكل ← يتصلب بالتبريد (عكسي/Reversible)</td><td>مش بيلين تاني عند إعادة التسخين (غير عكسي/Irreversible)</td></tr>
+<tr><td><b>الذوبان في مذيبات عضوية</b></td><td>يذوب</td><td>لا يذوب</td></tr>
+<tr><td><b>مقاومة التآكل (Abrasion)</b></td><td>أقل</td><td>أعلى</td></tr>
+<tr><td><b>الثبات الأبعادي</b></td><td>أقل</td><td>أكتر</td></tr>
+<tr><td><b>مثال سني</b></td><td>Impression Compound</td><td>Impression Silicones</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>Polymerization والمونومر المتبقي</h3>
+<p>الـ Polymerization أبداً <b>مش بتكتمل بالكامل 100%</b> ← المونومر المتحول جزئياً اللي فضل اسمه <b>Residual Monomer</b>. المونومر المتبقي ده بيسبب تهيج للأنسجة الرخوة وحساسية زيادة (hypersensitivity).</p>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>نوع التفاعل</th><th>نواتج ثانوية؟</th><th>مثال سني</th></tr>
+<tr><td><b>Condensation Polymerization</b></td><td>نعم (زي الماء)</td><td>طبعة Polysulphide</td></tr>
+<tr><td><b>Addition — Free Radical</b></td><td>لا</td><td>Composite Resin</td></tr>
+<tr><td><b>Addition — Ring-Opening</b></td><td>لا</td><td>طبعة Polyether</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>3. Ceramics & Glasses</h3>
+<p>مواد غير عضوية بتتشكل بالحرق في حرارة عالية (<b>firing</b>). عندها رابطة أيونية أو تساهمية وتركيب متراص. تتكون من <b>matrix زجاجي (amorphous)</b> + <b>طور بلوري (crystalline)</b> زي Al₂O₃ أو ZrO₂.</p>
+<div class="why-box"><b>زيادة الطور البلوري بتأدي لـ:</b> تحسين الخواص الميكانيكية، تقليل انتشار الشروخ، والتأثير على الخواص البصرية.</div>
+<p><b>ليه الخزف هش (Brittle)؟</b> بعكس المعادن والبوليمرات، الخزف صعب تشكيله بلاستيكياً بسبب طبيعة الرابطة الأيونية وقلة أنظمة الانزلاق (slip systems). الشروخ جوه الخزف بتعمل كـ <b>stress raisers</b> — الإجهاد عند طرف الشرخ ممكن يكون أعلى بكتير من الإجهاد المحيط، وده بيركّز الإجهاد ويضعف المادة.</p>
+</div>
+
+<div class="topic-block">
+<h3>مميزات وعيوب الخزف</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>✅ المميزات</th><th>❌ العيوب</th></tr>
+<tr><td>خمول كيميائي وتوافق حيوي (Inertness & Biocompatibility)</td><td>الهشاشة (Brittleness)</td></tr>
+<tr><td>قوة ضغط عالية</td><td>حساسية للشروخ والخدوش</td></tr>
+<tr><td>مظهر جمالي مُرضٍ</td><td>قوة شد منخفضة</td></tr>
+<tr><td>—</td><td>قوة صدم منخفضة</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>4. Composite Materials</h3>
+<p><b>Composites:</b> دمج فئتين أو أكتر من فئات المواد. الميزة: تصنيع مادة جديدة بخواص مرغوبة مش ممكن نوصلها بمادة واحدة بمفردها. مثال سني: <b>Composite Restoration</b>.</p>
+</div>
+`
+},
+{
+  navLabel:'Quick Reference',
+  eyebrow:'مرجع سريع',
+  titleAr:'مرجع سريع — أهم الأرقام والمقارنات',
+  titleEn:'Biomaterials Quick Reference',
+  html:`
+<div class="topic-block">
+<h3>استخدم الصفحة دي للمراجعة السريعة</h3>
+<p>هنا أهم الأرقام والمقارنات اللي بتتكرر في الامتحانات، عشان ترجعلها بسرعة من غير ما تفتح كل الصفحات من الأول.</p>
+</div>
+
+<div class="topic-block">
+<h3>أرقام لازم تحفظها</h3>
+<div class="kp-card"><div class="kp-num">1</div><p>الذرة بتستقر بـ <b>8 electrons</b> في الغلاف الخارجي.</p></div>
+<div class="kp-card"><div class="kp-num">2</div><p><b>14 Bravais Lattices</b> = طرق ترتيب نقاط الشبكة البلورية.</p></div>
+<div class="kp-card"><div class="kp-num">3</div><p>Contact Angle: أقل من <b>90°</b> = wetting كويس، أكبر من 90° = ضعيف، <b>0°</b> = مثالي.</p></div>
+<div class="kp-card"><div class="kp-num">4</div><p>فلورة الأسنان الطبيعية: لون أزرق-أبيض بطول موجي <b>400-450 nm</b> عند إثارتها بـ UV (300-400 nm).</p></div>
+<div class="kp-card"><div class="kp-num">5</div><p>سبائك الأسنان لازم تحتوي على <b>≥ 70-75%</b> معادن نبيلة لمقاومة التآكل.</p></div>
+<div class="kp-card"><div class="kp-num">6</div><p>فرق الحجم الذري لازم يكون <b>أقل من 15%</b> عشان يتكون Substitutional Solid Solution.</p></div>
+</div>
+
+<div class="topic-block">
+<h3>أشهر المصطلحات المتشابهة اللي بيتلخبط فيها الطلاب</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>المصطلح الأول</th><th>الفرق الجوهري</th><th>المصطلح الثاني</th></tr>
+<tr><td><b>Cohesion</b></td><td>مواد متشابهة ↔ مواد مختلفة</td><td><b>Adhesion</b></td></tr>
+<tr><td><b>Ductility</b></td><td>تحت شد (سلك) ↔ تحت ضغط (صفائح)</td><td><b>Malleability</b></td></tr>
+<tr><td><b>Resilience</b></td><td>مساحة الجزء المرن بس ↔ مساحة المنحنى كله</td><td><b>Toughness</b></td></tr>
+<tr><td><b>Creep</b></td><td>إجهاد ثابت / الانفعال يتغير ↔ انفعال ثابت / الإجهاد يتغير</td><td><b>Stress Relaxation</b></td></tr>
+<tr><td><b>Tarnish</b></td><td>تغير سطحي بسيط ↔ تلف فعلي في البنية</td><td><b>Corrosion</b></td></tr>
+<tr><td><b>Brittle Fracture</b></td><td>بلا تشوه، سريع ↔ تشوه بلاستيكي أولاً، بطيء</td><td><b>Ductile Fracture</b></td></tr>
+<tr><td><b>Thermoplastic</b></td><td>يلين تاني بالحرارة (عكسي) ↔ لا يلين تاني (غير عكسي)</td><td><b>Thermosetting</b></td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>خريطة سريعة: أي رابطة بتخدم أي مادة سنية؟</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>نوع الرابطة</th><th>المادة السنية المرتبطة بيها</th></tr>
+<tr><td><b>Ionic Bond</b></td><td>Glass & Ceramics</td></tr>
+<tr><td><b>Covalent Bond</b></td><td>Polymers (زي Acrylic Resin)</td></tr>
+<tr><td><b>Metallic Bond</b></td><td>Dental Alloys</td></tr>
+</table></div>
+</div>
+
+<div class="topic-block">
+<h3>4 أنواع الـ Wear في جملة واحدة لكل نوع</h3>
+<div class="kp-card"><div class="kp-num">1</div><p><b>Abrasive:</b> مادة أصلب بتقطع/تحفر في مادة أضعف (Two-body أو Three-body).</p></div>
+<div class="kp-card"><div class="kp-num">2</div><p><b>Corrosive:</b> البيئة (رطوبة، أحماض) بتسارع الـ wear.</p></div>
+<div class="kp-card"><div class="kp-num">3</div><p><b>Adhesive:</b> التحام موضعي ونقل جزيئات من سطح للتاني.</p></div>
+<div class="kp-card"><div class="kp-num">4</div><p><b>Surface Fatigue:</b> إجهاد موضعي متكرر بيولد شروخ سطحية بتتكسر.</p></div>
+</div>
+
+<div class="topic-block">
+<h3>4 فئات المواد السنية في نظرة واحدة</h3>
+<div class="compare-wrap"><table class="compare-table">
+<tr><th>الفئة</th><th>مثال</th><th>أهم خاصية</th></tr>
+<tr><td><b>Metals</b></td><td>Amalgam, Alloys</td><td>توصيل حراري/كهربائي، ليونة</td></tr>
+<tr><td><b>Polymers</b></td><td>PMMA, Silicones</td><td>سلاسل مونومر متكررة</td></tr>
+<tr><td><b>Ceramics</b></td><td>تيجان الخزف</td><td>هشة لكن مقاومة للضغط وجمالية</td></tr>
+<tr><td><b>Composites</b></td><td>Composite Restoration</td><td>دمج خواص فئتين أو أكتر</td></tr>
+</table></div>
+</div>
+`
+}
+  ]
+}
+];
+
+</script>
+<script>
+/* ==== ROUTER ==== */
+let currentView = {section:null, topicIndex:0};
+
+function goHome(){
+  currentView = {section:null, topicIndex:0};
+  render();
+}
+function goSection(secId){
+  currentView = {section:secId, topicIndex:0};
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goTopic(idx){
+  currentView.topicIndex = idx;
+  renderTopicPage();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function render(){
+  const app = document.getElementById('app');
+  if(!currentView.section){
+    renderHome(app);
+  } else {
+    renderTopicPage();
+  }
+}
+
+function renderHome(app){
+  let html = `<div class="home-hero panel-anim">
+    <div class="eyebrow">📚 قبل ما تدخل السنة التانية</div>
+    <h2>مرجعك السريع في مواد الأسنان</h2>
+    <p>مش هدفنا نكرر المحاضرة، هدفنا إنك تفهم وتعرف اللي المفروض تكون عارفه من كل موضوع — بالعربي وبساطة.</p>
+  </div>
+  <div class="section-cards">`;
+
+  SECTIONS.forEach(sec=>{
+    const topicCount = sec.topics.length;
+    html += `<div class="section-card panel-anim" onclick="goSection('${sec.id}')">
+      <div class="sc-top">
+        <h3>${sec.icon} ${sec.titleAr}</h3>
+        <span class="sc-count">${topicCount} موضوع</span>
+      </div>
+      <p>${sec.descAr}</p>
+      <div class="sc-topics">${sec.chipTopics.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+    </div>`;
+  });
+  html += `</div>`;
+  app.innerHTML = html;
+}
+
+function renderTopicPage(){
+  const app = document.getElementById('app');
+  const sec = SECTIONS.find(s=>s.id===currentView.section);
+  const topic = sec.topics[currentView.topicIndex];
+
+  let html = `<div class="crumb panel-anim">
+    <span onclick="goHome()" style="cursor:pointer">الرئيسية</span> ← <b>${sec.titleAr}</b>
+  </div>
+  <div class="subject-nav">`;
+  SECTIONS.forEach(s=>{
+    html += `<button class="snav-btn ${s.id===sec.id?'active':''}" onclick="goSection('${s.id}')">${s.icon} ${s.navLabel}</button>`;
+  });
+  html += `</div>
+  <div class="topic-nav">`;
+  sec.topics.forEach((t,i)=>{
+    html += `<button class="tnav-btn ${i===currentView.topicIndex?'active':''}" onclick="goTopic(${i})"><span class="t">${t.navLabel}</span></button>`;
+  });
+  html += `</div>
+
+  <div class="topic-hero panel-anim">
+    <div class="eyebrow">${topic.eyebrow||sec.titleAr}</div>
+    <h2>${topic.titleAr}</h2>
+    ${topic.titleEn?`<div class="sub-en">${topic.titleEn}</div>`:''}
+  </div>
+
+  <div class="panel-anim" id="topic-content">${topic.html}</div>`;
+
+  app.innerHTML = html;
+
+  // init any flashcards on this page
+  document.querySelectorAll('.fc-card').forEach(card=>{
+    card.addEventListener('click', ()=>card.classList.toggle('flipped'));
+  });
+}
+
+render();
+
+// ===== ACCESS SYSTEM (Firebase) =====
+const welcomeMsgs = [
+  { emoji:'🦷', title:'أهلاً بيك!', body:'تم تفعيل <strong style="color:#5eead4;">زتونة سنة أولى طب أسنان</strong> بنجاح! 🎉<br>Anatomy + Biomaterials — كل حاجة جاهزة.<br><strong style="color:#e8b34c;">ربنا يوفقك ويسهّل عليك 🤲</strong>' },
+  { emoji:'💚', title:'مرحباً بيك!', body:'بسم الله تبارك الله — ابدأ المراجعة.<br>افهمها كويس دلوقتي، هتوفر عليك وقت كتير بعدين.<br><strong style="color:#34d399;">نسأل الله السداد والتوفيق 🌿</strong>' },
+  { emoji:'🌟', title:'يا هلا بيك!', body:'العلم نور، وإنت خطوة على الطريق. ✨<br>ده أساس هتبني عليه سنين دراستك الجاية.<br><strong style="color:#e8b34c;">نسأل الله أن ينفع بك أمتك. 🤍</strong>' },
+  { emoji:'🎯', title:'يلا بيك!', body:'الفهم دلوقتي أهم من أي وقت. 💪<br>خد وقتك، افهم مش بس تحفظ.<br><strong style="color:#5eead4;">توكل على الله وابدأ بسم الله 📖</strong>' },
+];
+
+function getDeviceId(){
+  let id = localStorage.getItem('fm_device_id');
+  if(!id){
+    id = 'dev_' + Math.random().toString(36).substring(2,10) + '_' + Date.now().toString(36);
+    localStorage.setItem('fm_device_id', id);
+  }
+  return id;
+}
+
+function showPwError(msg){
+  const inp = document.getElementById('pwInput');
+  const err = document.getElementById('pwError');
+  err.textContent = msg;
+  err.classList.add('show');
+  inp.classList.remove('error'); void inp.offsetWidth; inp.classList.add('error');
+  setTimeout(()=>{ inp.classList.remove('error'); }, 500);
+}
+
+function showWelcome(){
+  const msg = welcomeMsgs[Math.floor(Math.random() * welcomeMsgs.length)];
+  const modal = document.createElement('div');
+  modal.style.cssText = 'position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px;';
+  modal.innerHTML = `
+    <div style="background:linear-gradient(160deg,#061417,#07171a);border:1px solid rgba(21,184,166,0.3);border-radius:22px;max-width:390px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.8);">
+      <div style="height:3px;background:linear-gradient(90deg,#15b8a6,#34d399,#e8b34c,#15b8a6);"></div>
+      <div style="padding:36px 28px;text-align:center;direction:rtl;">
+        <div style="font-size:52px;margin-bottom:12px;">${msg.emoji}</div>
+        <div style="font-size:9px;font-weight:700;letter-spacing:4px;color:rgba(21,184,166,0.6);margin-bottom:6px;">FULLMARK · زتونة سنة أولى طب أسنان</div>
+        <div style="font-size:22px;font-weight:900;color:#eaf6f3;margin-bottom:6px;font-family:Georgia,'Times New Roman',serif;">${msg.title}</div>
+        <div style="width:40px;height:2px;background:linear-gradient(90deg,transparent,#15b8a6,transparent);margin:0 auto 16px;"></div>
+        <div style="font-size:13px;color:rgba(154,194,189,0.9);line-height:1.9;margin-bottom:20px;">${msg.body}</div>
+        <div style="background:rgba(240,100,92,0.08);border:1px solid rgba(240,100,92,0.3);border-radius:12px;padding:14px 16px;margin-bottom:20px;text-align:right;">
+          <div style="font-size:12px;font-weight:800;color:#f0645c;margin-bottom:6px;">⚠️ تنبيه هام</div>
+          <div style="font-size:11px;color:rgba(200,200,200,0.8);line-height:1.9;">
+            🔐 هذا الملف مرخّص لاستخدامك الشخصي فقط<br>
+            ❌ يُمنع منعاً باتاً مشاركة أو نشر هذا الملف<br>
+            🙏 شكراً لدعمك — هذا يساعدنا نكمل في إنتاج المحتوى
+          </div>
+        </div>
+        <button onclick="this.closest('div[style*=fixed]').remove();" style="width:100%;padding:14px;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;background:linear-gradient(135deg,#15b8a6,#0d9488);color:#04201c;font-family:Georgia,'Times New Roman',serif;">
+          🚀 فاهم وهبدأ المذاكرة دلوقتي
+        </button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+}
+
+/* ===== Firebase Connection ===== */
+import('https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js').then(async ({initializeApp, getApps}) => {
+  const { getFirestore, doc, getDoc, updateDoc, collection, addDoc, serverTimestamp } = await import('https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js');
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBRg9YDGiY0gZ-oHF4hI-qK9GA6Xx8YthU",
+    authDomain: "fullmark-admin.firebaseapp.com",
+    projectId: "fullmark-admin",
+    storageBucket: "fullmark-admin.firebasestorage.app",
+    messagingSenderId: "1036699776",
+    appId: "1:1036699776:web:4b9da54b025c309d51fe65"
+  };
+
+  const PRODUCT_NAME = "زتونة سنة أولى طب أسنان"; // لازم يطابق بالحرف اسم المادة في الـ Admin Panel
+  const PRODUCT_ID   = "zatouna-first-year-dentistry"; // لازم يطابق الـ ID اللي هيظهر في جدول "المواد" بالأدمن
+
+  const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const STORAGE_KEY = `fm_unlocked_${PRODUCT_NAME.replace(/\s+/g,'_')}`;
+
+  const lockEl = document.getElementById('lockScreen');
+  const btn = document.getElementById('fmActivateBtn');
+  const inp = document.getElementById('pwInput');
+  const loadingEl = document.getElementById('fmGateLoading');
+
+  function grantAccess(){
+    lockEl.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    showWelcome();
+  }
+
+  // Auto-login لو الجهاز ده مفعّل بالفعل
+  if(localStorage.getItem(STORAGE_KEY)){
+    lockEl.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+
+  async function handleActivate(){
+    const code = inp.value.trim().toUpperCase();
+    if(!code){ showPwError('من فضلك أدخل الكود'); return; }
+
+    btn.disabled = true; btn.textContent = '⏳ جاري التحقق...'; loadingEl.style.display = 'block';
+    document.getElementById('pwError').classList.remove('show');
+
+    try{
+      const codeRef = doc(db, 'codes', code);
+      const snap = await getDoc(codeRef);
+
+      if(!snap.exists()){ showPwError('❌ الكود غير صحيح'); inp.value=''; return; }
+      const data = snap.data();
+
+      if(data.productName !== PRODUCT_NAME){
+        showPwError('❌ هذا الكود غير مخصص لهذه المادة'); inp.value=''; return;
+      }
+
+      const myDeviceId = getDeviceId();
+
+      if(data.used){
+        if(data.deviceId === myDeviceId){
+          localStorage.setItem(STORAGE_KEY, code);
+          grantAccess();
+        } else {
+          showPwError('⚠️ هذا الكود مفعّل مسبقاً على جهاز آخر — تواصل معنا على تيليجرام');
+          inp.value='';
+        }
+        return;
+      }
+
+      await updateDoc(codeRef, {
+        used: true, deviceId: myDeviceId, usedAt: new Date()
+      });
+      localStorage.setItem(STORAGE_KEY, code);
+      grantAccess();
+
+    }catch(err){
+      console.error(err);
+      showPwError('⚠️ تعذّر الاتصال — تأكد من الإنترنت وحاول تاني');
+    }finally{
+      btn.disabled = false; btn.textContent = 'دخول →'; loadingEl.style.display = 'none';
+    }
+  }
+
+  btn.addEventListener('click', handleActivate);
+  inp.addEventListener('keydown', function(e){ if(e.key === 'Enter') handleActivate(); });
+
+  /* ===== نظام رفع طلب الاشتراك ===== */
+  window.fmFileChanged = function(input){
+    const file = input.files[0];
+    if(!file) return;
+    document.getElementById('fileLabelText').textContent = '✅ ' + file.name;
+    const reader = new FileReader();
+    reader.onload = e => {
+      document.getElementById('subImgThumb').src = e.target.result;
+      document.getElementById('subImgPreview').style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  };
+
+  window.fmSubmitRequest = async function(){
+    const name     = document.getElementById('subName').value.trim();
+    const telegram = document.getElementById('subTelegram').value.trim();
+    const fileInp  = document.getElementById('subReceipt');
+    const errEl    = document.getElementById('subFormError');
+    const sucEl    = document.getElementById('subFormSuccess');
+    const submitBtn = document.getElementById('subSubmitBtn');
+
+    errEl.style.display = 'none';
+    sucEl.style.display = 'none';
+
+    if(!name)     { errEl.textContent = '⚠️ من فضلك أدخل اسمك الكامل'; errEl.style.display='block'; return; }
+    if(!telegram) { errEl.textContent = '⚠️ من فضلك أدخل يوزر تليجرام عشان يوصلك الكود'; errEl.style.display='block'; return; }
+    if(!fileInp.files[0]) { errEl.textContent = '⚠️ من فضلك ارفع صورة الإيصال'; errEl.style.display='block'; return; }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '⏳ جاري إرسال الطلب...';
+
+    try{
+      // تحويل الصورة لـ Base64 مضغوطة وحفظها في Firestore مباشرة
+      const file = fileInp.files[0];
+      const receiptUrl = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = e => {
+          const img = new Image();
+          img.onload = () => {
+            const MAX = 800;
+            let w = img.width, h = img.height;
+            if(w > MAX || h > MAX){
+              if(w > h){ h = Math.round(h * MAX / w); w = MAX; }
+              else { w = Math.round(w * MAX / h); h = MAX; }
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w; canvas.height = h;
+            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+            resolve(canvas.toDataURL('image/jpeg', 0.75));
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+
+      // حفظ الطلب في Firestore
+      await addDoc(collection(db, 'paymentRequests'), {
+        studentName:      name,
+        telegramUsername: telegram,
+        productName:      PRODUCT_NAME,
+        productId:        PRODUCT_ID,
+        receiptUrl,
+        status:           'pending',
+        createdAt:        serverTimestamp()
+      });
+
+      // إشعار تليجرام للأدمن
+      const TG_TOKEN  = '8853979192:AAHmv3NxHKh3QmH-elu1e4NJR4gFOclbsV0';
+      const TG_CHATID = '8275336376';
+      fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          chat_id: TG_CHATID,
+          text: `📩 طلب اشتراك جديد!\n👤 ${name}\n📲 ${telegram}\n📚 ${PRODUCT_NAME}\n\nافتح الأدمن لمراجعة الإيصال والموافقة.`
+        })
+      }).catch(()=>{});
+
+      sucEl.innerHTML = `✅ تم إرسال طلبك بنجاح!<br>هنراجع الإيصال وهيوصلك الكود على تليجرام خلال دقائق بإذن الله 🎉<br><strong style="color:var(--teal-2);">📲 راجع محادثتك مع @FullmarkEg_bot على تليجرام</strong>`;
+      sucEl.style.display = 'block';
+      submitBtn.style.display = 'none';
+      document.getElementById('subFormWrap').querySelectorAll('input').forEach(i=>i.disabled=true);
+      document.getElementById('fileLabel').style.pointerEvents = 'none';
+
+    }catch(err){
+      console.error(err);
+      errEl.textContent = '⚠️ حصل خطأ أثناء الإرسال — تأكد من الإنترنت وحاول تاني';
+      errEl.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'إرسال الطلب ✉️';
+    }
+  };
+});
+</script>
+</body>
+</html>
